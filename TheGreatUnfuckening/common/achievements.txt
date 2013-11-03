@@ -1,0 +1,1082 @@
+#############################
+# 7 VERY EASY ACHIEVEMENTS
+#############################
+
+achievement_for_the_glory = {
+	id = 1
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+	}
+	
+	happened = {
+		has_country_flag = have_diploannexed
+	}
+}
+
+achievement_grand_army = {
+	id = 2
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+		NOT = { army_size_percentage = 0.99 }
+	}
+	
+	happened = {
+		army_size_percentage = 0.99
+	}
+}
+
+achievement_grand_navy = {
+	id = 3
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+		NOT = { navy_size_percentage = 0.99 }
+	}
+	
+	happened = {
+		navy_size_percentage = 0.99
+	}
+}
+
+achievement_defender_of_the_faith = { 
+	id = 4
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+		is_defender_of_faith = no
+	}
+	
+	happened = {
+		is_defender_of_faith = yes
+	}
+}
+
+achievement_until_death_do_us_apart = {
+	id = 5
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+		NOT = { num_of_royal_marriages = 1 }
+	}
+	
+	happened = {
+		num_of_royal_marriages = 1
+	}
+}
+
+achievement_that_is_mine = {
+	id = 6
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+	}
+	
+	happened = {
+		has_country_flag = conquered_province
+	}
+}
+
+achievement_victorious = {
+	id = 7
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+	}
+	
+	happened = {
+		has_country_flag = has_won_war
+	}
+}
+
+
+#############################
+# 11 EASY ACHIEVEMENTS
+#############################
+
+achievement_emperors_new_clothes = {
+	id = 8
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+		NOT = { tag = HAB }
+	}	
+	
+	happened = {
+		is_emperor = yes
+	}
+}
+
+achievement_down_under = {
+	id = 9
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+	}
+
+	happened = {
+		australian_coast = {
+			owned_by = ROOT
+			is_colony = yes
+		}
+	}
+}
+
+achievement_isnt_this_the_way_to_india = {
+	id = 10
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+		tag = CAS
+		NOT = {
+			north_america = { has_discovered = ROOT }
+			south_america = { has_discovered = ROOT }
+		}
+	}
+	
+	happened = {
+		north_america = { has_discovered = ROOT }
+		south_america = { has_discovered = ROOT }
+	}
+}
+
+achievement_azur_seme_de_lis_or = {
+	id = 11
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+		tag = FRA
+	}
+	
+	happened = {
+		all_core_province = {
+			owned_by = FRA
+		}
+	}
+}
+
+achievement_not_so_sad_a_state = {
+	id = 12
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+		tag = POR
+	}
+	
+	happened = {
+		africa = {
+			owned_by = POR
+			is_colony = yes
+		}
+		brazil_region = {
+			owned_by = POR
+			is_colony = yes
+		}
+	}	
+}
+
+achievement_seriously = {
+	id = 13
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+	}
+	
+	happened = {
+		has_country_flag = killed_tenkey
+	}
+}
+
+achievement_its_all_about_the_money = {
+	id = 14
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+	}
+	
+	happened = {
+		treasury = 3000
+	}
+}
+
+achievement_respected = {
+	id = 15
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+	}
+	
+	happened = {
+		prestige = 100
+		legitimacy = 100
+		stability = 3
+	}
+}
+
+achievement_true_catholic = {
+	id = 16
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+		NOT = { num_of_cardinals = 2 }
+	}
+	
+	happened = {
+		num_of_cardinals = 3
+	}
+}
+
+achievement_truly_divine_ruler = {
+	id = 17
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+		NOT = {
+			dip = 5
+			mil = 5
+			adm = 5
+		}
+	}
+	
+	happened = {
+		dip = 5
+		mil = 5
+		adm = 5
+	}
+}
+
+achievement_grand_coalition = {
+	id = 51
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+	}
+	
+	happened = {
+		num_of_coalition_members = 6
+	}
+}
+
+
+#############################
+# 11 NORMAL ACHIEVEMENTS
+#############################
+
+achievement_italian_ambition = {
+	id = 18
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+	}	
+	
+	happened = {
+		tag = ITA
+	}	
+}
+
+achievement_cold_war = {
+	id = 19
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+	}
+	
+	happened = {
+		has_country_flag = cold_war
+	}
+}
+
+achievement_royal_authority = {
+	id = 20
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+	}
+	
+	happened = {
+		has_country_flag = installed_union
+	}
+}
+
+achievement_viva_la_revolucion = {
+	id = 21
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+	}
+	
+	happened = {
+		has_country_flag = supported_rebels
+	}
+}
+
+achievement_brothers_in_arms = {
+	id = 22
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+	}
+	
+	happened = {
+		has_country_flag = brothers_in_arms
+	}
+}
+
+achievement_no_pirates_in_my_carribean = {
+	id = 23
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+	}
+	
+	happened = {
+		the_carribean = {
+			type = all
+			owned_by = ROOT
+		}
+	}
+}
+
+achievement_master_of_india = {
+	id = 24
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+		capital_scope = {
+			continent = europe
+		}
+	}
+	
+	happened = {
+		indian_region = {
+			type = all
+			owned_by = ROOT
+		}
+	}
+}
+
+achievement_sweden_is_not_overpowered = {
+	id = 25
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+		tag = SWE
+	}
+	
+	happened = {
+		owns = 1
+		owns = 2
+		owns = 3
+		owns = 6
+		owns = 9
+		owns = 11
+		owns = 19
+		owns = 25
+		owns = 27
+		owns = 28
+		owns = 30
+		owns = 33
+		owns = 34
+		owns = 35
+		owns = 36
+		owns = 37
+		owns = 38
+		owns = 39
+		owns = 40
+		owns = 41
+		owns = 42
+		owns = 43
+		owns = 45
+		owns = 46
+		owns = 47
+		owns = 48
+		owns = 1841
+		owns = 1842
+		owns = 1858
+		owns = 1930
+		owns = 1935
+		owns = 1981
+		owns = 1982
+	}
+}
+
+achievement_my_armies_are_invincible = {
+	id = 26
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+	}
+	
+	happened = {
+		land_morale = 7
+	}
+}
+
+achievement_this_navy_can_take_it_all = {
+	id = 27
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+	}
+	
+	happened = {
+		naval_morale = 7
+	}
+}
+
+achievement_winged_hussars = {
+	id = 52
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+	}
+	
+	happened = {
+		has_unit_type = polish_winged_hussar
+		has_global_modifier_value = {
+			which = cavalry_power
+			value = 0.5
+		}
+	}
+}
+
+
+#############################
+# 11 HARD ACHIEVEMENTS
+#############################
+
+achievement_the_pen_is_mightier_than_the_sword = {
+	id = 28
+	
+	possible = {
+		ironman = yes
+		tag = HAB
+		start_date = 1444.11.11
+	}
+	
+	happened = {
+		num_of_unions = 3
+	}
+}
+
+achievement_traditional_player = {
+	id = 29
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+	}
+	
+	happened = {
+		army_tradition = 90
+		navy_tradition = 90
+	}
+}
+
+achievement_its_all_about_luck = {
+	id = 30
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+	}
+	
+	happened = {
+		has_country_flag = beat_big_leader
+	}
+}
+
+achievement_all_belongs_to_mother_russia = {
+	id = 31
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+		primary_culture = russian
+	}
+	
+	happened = {
+		tag = RUS
+	}
+}
+
+achievement_at_every_continent = {
+	id = 32
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+	}
+	
+	happened = {
+		any_owned_province = {
+			continent = europe
+		}
+		any_owned_province = {
+			continent = asia
+		}
+		any_owned_province = {
+			continent = africa
+		}
+		any_owned_province = {
+			continent = north_america
+		}
+		any_owned_province = {
+			continent = south_america
+		}
+		any_owned_province = {
+			continent = oceania
+		}
+	}
+}
+
+achievement_spain_is_the_emperor = {
+	id = 33
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+		NOT = { is_emperor = yes }
+	}
+	
+	happened = {
+		tag = SPA
+		is_emperor = yes
+	}
+}
+
+achievement_an_early_reich = {
+	id = 34
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+	}
+	
+	happened = {
+		tag = GER
+	}
+}
+
+achievement_poland_can_into_space = {
+	id = 35
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+		tag = POL
+	}
+	
+	happened = {
+		adm_tech = 32
+		dip_tech = 32
+		mil_tech = 32
+	}
+}
+
+achievement_world_discoverer = {
+	id = 36
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+	}
+	
+	happened = {
+		all_province = {
+			has_discovered = ROOT
+		}
+	}
+}
+
+achievement_the_chrysanthemum_throne = {
+	id = 37
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+		government = daimyo
+	}
+	
+	happened = {
+		tag = JAP
+		japanese_region = {
+			type = all
+			OR = {
+				is_empty = yes
+				owned_by = JAP
+			}
+		}
+	}
+}
+
+achievement_trade_hegemon = {
+	id = 53
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+		capital_scope = {
+			continent = europe
+		}
+		technology_group = western
+	}
+	
+	happened = {
+		owns = 388 # Aden
+		owns = 431 # Hormoz
+		owns = 596 # Malacca
+	}
+}
+
+
+#############################
+# 11 VERY HARD ACHIEVEMENTS
+#############################
+
+achievement_basileus = {
+	id = 38
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+		tag = BYZ
+	}
+	
+	happened = {
+		AND = {
+			owns = 142
+			owns = 143
+			owns = 144
+			owns = 145
+			owns = 146
+			owns = 147
+			owns = 148
+			owns = 149
+			owns = 150
+			owns = 151
+			owns = 159
+			owns = 163
+			owns = 164
+			owns = 285
+			owns = 316
+			owns = 317
+			owns = 318
+			owns = 319
+			owns = 320
+			owns = 321
+			owns = 322
+			owns = 323
+			owns = 324
+			owns = 325
+			owns = 326
+			owns = 328
+			owns = 329
+			owns = 330
+			owns = 1764
+			owns = 1773
+			owns = 1765
+			owns = 1846
+			owns = 1848
+			owns = 1853
+		}
+	}
+}
+
+achievement_agressive_expander = {
+	id = 39
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+	}
+	
+	happened = {
+		num_of_cities = 200
+	}
+}
+
+achievement_kaiser_not_just_in_name = {
+	id = 40
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+	}
+	
+	happened = {
+		tag = HLR
+	}
+}
+
+achievement_norwegian_wood = {
+	id = 41
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+		tag = NOR
+	}
+	
+	happened = {
+		NOT = {
+			any_province = {
+				trade_goods = naval_supplies
+				NOT = { owned_by = NOR }
+			}
+		}
+	}
+}
+
+achievement_african_power = {
+	id = 42
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+		tag = KON
+	}
+	
+	happened = {
+		africa = {
+			type = all
+			OR = {
+				is_wasteland = yes
+				is_colony = yes
+				is_empty = yes
+				owned_by = KON
+			}
+		}
+	}
+}
+
+achievement_no_trail_of_tears = {
+	id = 43
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+		tag = CHE
+	}
+	
+	happened = {
+		technology_group = western
+		the_thirteen_colonies = {
+			type = all
+			owned_by = CHE
+		}
+	}
+}
+
+achievement_one_night_in_paris = {
+	id = 44
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+		tag = ENG
+	}
+	
+	happened = {
+		183 = { # Île-de-France/Paris
+			owner = {
+				OR = {
+					tag = ENG
+					tag = GBR
+				}
+			}
+		}
+	}
+}
+
+achievement_definitely_the_sultan_of_rum = {
+	id = 45
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+		tag = TUR
+	}
+	
+	happened = {
+		owns = 295 # Moskva
+		owns = 151 # Thrace/Istanbul
+		owns = 118 # Rome
+	}
+}
+
+achievement_market_control = {
+	id = 46
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+	}
+	
+	happened = {
+		num_of_trading_bonuses = 7
+	}
+}
+
+achievement_ruina_imperii = {
+	id = 47
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+	}
+	
+	happened = {
+		NOT = { hre_size = 1 }
+	}
+}
+
+achievement_luck_of_the_irish = {
+	id = 55
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+		OR = {
+			tag = TYR
+			tag = CNN
+			tag = MNS
+			tag = LEI
+		}
+	}
+	
+	happened = {
+		british_isles = {
+			type = all
+			owned_by = ROOT
+		}
+	}
+}
+
+
+#############################
+# 4 INSANE ACHIEVEMENTS
+#############################
+
+achievement_world_conqueror = {
+	id = 48
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+	}
+	
+	happened = {
+		NOT = {
+			any_country = {
+				NOT = { tag = ROOT }
+				exists = yes
+			}
+		}
+	}
+}
+
+achievement_the_three_mountains = {
+	id = 49
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+		tag = RYU
+	}
+	
+	happened = {
+		NOT = {
+			any_country = {
+				NOT = { tag = RYU }
+				exists = yes
+			}
+		}
+	}
+}
+
+achievement_jihad = {
+	id = 50
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+		tag = NAJ
+		religion = sunni
+	}
+	
+	happened = {
+		religion = sunni
+		europe = {
+			type = all
+			OR = {
+				is_wasteland = yes
+				is_colony = yes
+				is_empty = yes
+				AND = {
+					owned_by = NAJ
+					religion = sunni
+				}
+			}
+		}
+		africa = {
+			type = all
+			OR = {
+				is_wasteland = yes
+				is_colony = yes
+				is_empty = yes
+				AND = {
+					owned_by = NAJ
+					religion = sunni
+				}
+			}
+		}
+		asia = {
+			type = all
+			OR = {
+				is_wasteland = yes
+				is_colony = yes
+				is_empty = yes
+				AND = {
+					owned_by = NAJ
+					religion = sunni
+				}
+			}
+		}
+	}
+}
+
+achievement_sunset_invasion = {
+	id = 54
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+		tag = AZT
+	}
+	
+	happened = {
+		owns = 227 # Lisbon
+		owns = 217 # Madrid
+		owns = 183 # Paris
+		owns = 236 # London
+		owns = 97  # Amsterdam
+		owns = 118 # Rome
+	}
+}
+
+
+
+###################################
+# New for 1.3
+###################################
+
+
+# very easy
+achievement_just_a_little_patience = {
+	id = 56
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+	}
+	
+	happened = {
+		is_year = 1820
+	}
+}
+
+#medium
+achievement_turning_the_tide = {
+	id = 57
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+		government = steppe_horde
+	}
+	
+	happened = {
+		technology_group = western
+		unit_type = western
+	}
+}
+
+# easy
+achievement_double_the_love = {
+	id = 58
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+		NOT = { num_of_unions = 1 }
+	}
+	
+	happened = {
+		num_of_unions = 2
+	}
+}
+
+# medium
+achievement_liberty_or_death = {
+	id = 59
+	
+	possible = {
+		ironman = yes
+		start_date = 1776.7.4
+		tag = USA
+	}
+	
+	happened = {
+		is_at_war = no
+		all_core_province = {
+			owned_by = USA
+		}
+	}
+}
+
+# easy
+achievement_nobody_wants_to_die = {
+	id = 60
+	
+	possible = {
+		ironman = yes
+		start_date = 1444.11.11
+		tag = SON
+	}
+	
+	happened = {
+		owns = 1132	#timbuktu
+	}
+}
+

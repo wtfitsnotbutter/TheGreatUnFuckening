@@ -1,0 +1,115 @@
+reichsreform = {
+	member = {
+		build_cost = -0.02
+		technology_cost = -0.02
+	}
+	emperor = {
+		build_cost = -0.02
+		technology_cost = -0.02
+		prestige = 1
+	}
+	on_effect = {
+		imperial_ban_allowed = yes
+	}
+	off_effect = {
+		imperial_ban_allowed = no
+	}
+}
+
+reichsregiment = {
+	member = {
+		diplomatic_reputation = -2
+	}
+	emperor = {
+		diplomatic_reputation = 1
+		diplomats = 1
+	}
+}
+
+hofgericht = { 
+	member = {
+		prestige = -0.5
+	}
+	emperor = {
+		prestige = 0.5
+		core_creation = -0.10
+	}
+}
+
+gemeinerpfennig = {
+	member = {
+		global_tax_modifier = -0.05
+	}
+	emperor = {
+		global_tax_modifier = 0.25
+	}
+}
+
+landfriede = {
+	member = {
+		army_tradition = -1
+		stability_cost_modifier = -0.10
+	}
+	emperor = {
+		army_tradition = -1
+		stability_cost_modifier = 0.10
+	}
+	on_effect = {
+		internal_hre_cb = no
+	}
+	off_effect = {
+		internal_hre_cb = yes
+	}
+}
+
+erbkaisertum = {
+	member = {
+		diplomats = -1
+	}
+	emperor = {
+		imperial_authority = 0.25
+	}
+	on_effect = {
+		hre_inheritable = yes
+	}
+	off_effect = {
+		hre_inheritable = no
+	}
+}
+
+privilegia_de_non_appelando = {
+
+	war = yes			#this may cause a war, so special AI check needed, to not lose many.
+	
+	member = {
+		diplomatic_reputation = 1
+	}
+	emperor = {
+		diplomatic_reputation = -3
+	}
+	on_effect = {
+	
+		emperor = {
+			country_event = { id = 9073 tooltip = vassalize_empire2 }
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					is_part_of_hre = yes
+					is_emperor = no
+					num_of_cities = 1
+					NOT = { vassal_of = ROOT }
+				}
+				country_event = { id = 9074 }
+			}
+		}
+	}	
+}
+
+renovatio = {
+	on_effect = {
+		emperor = {
+			country_event = { id = 9075 tooltip = renovatio_effect }
+		}
+	}
+}

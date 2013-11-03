@@ -1,0 +1,12 @@
+# Tipu Sultan Rocket Tactics
+
+type = infantry
+unit_type = indian
+
+maneuver = 1
+offensive_morale = 8
+defensive_morale = 4
+offensive_fire = 6
+defensive_fire = 4
+offensive_shock = 6
+defensive_shock = 4

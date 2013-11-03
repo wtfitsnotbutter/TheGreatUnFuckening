@@ -1,0 +1,2002 @@
+#########################################################################
+# OPINION MODIFIERS
+##########################################################################
+
+##########################################################################
+# HARD - DO NOT REMOVE OR RENAME ANY OF THESE
+##########################################################################
+
+##############
+# FIXED STATE
+##############
+
+rival = {
+	opinion = -50
+}
+
+enemy = {
+	opinion = -25
+}
+
+allied_to_rival = {
+	opinion = -25
+}
+
+enemy_of_my_enemy = {
+	opinion = 1
+	max = 20
+}
+
+rebublic_same_religion = {
+	opinion = 10
+}
+
+rebublic_different_religions_group = {
+	opinion = -5
+}
+
+republic_different_religion_same_group = {
+	opinion = -10
+}
+
+rebublic_different_religions_group_border = {
+	opinion = -10
+}
+
+republic_different_religion_same_group_border = {
+	opinion = -20
+}
+
+republic_misguided_heretic = {
+	opinion = -5
+}
+
+republic_misguided_heretic_border = {
+	opinion = -10
+}
+
+same_religion = {
+	opinion = 25
+}
+
+different_religions_group = {
+	opinion = -10
+}
+
+different_religions_group_border = {
+	opinion = -20
+}
+
+different_religion_same_group = {
+	opinion = -20
+}
+
+different_religion_same_group_border = {
+	opinion = -40
+}
+
+misguided_heretic = {
+	opinion = -10
+}
+
+misguided_heretic_border = {
+	opinion = -20
+}
+
+at_war = {
+	opinion = -20
+}
+
+same_dynasty = {
+	opinion = 15
+}
+royal_marriage = {
+	opinion = 25
+}
+
+guaranteed = {
+	opinion = 10
+}
+alliance = {
+	opinion = 50
+}
+
+in_war_together = {
+	opinion = 25
+}
+
+have_claim = {
+	opinion = -5
+}
+
+getting_subsidies = {
+	opinion = 15
+}
+
+has_cb = {
+	opinion = -15
+}
+
+creating_claim = {
+	opinion = -15
+}
+
+is_vassal = {
+	opinion = 50
+}
+
+excommunicated = {
+	opinion = -50
+}
+
+excommunicated_theocracy = {
+	opinion = -200
+}
+
+##################################
+# Strategy
+##################################
+
+want_your_provinces = {
+	opinion = -10
+	min = -10
+}
+
+border_friction = {
+	opinion = -1
+	min = -200
+}
+
+historical_friend = {
+	opinion = 25
+}
+
+historical_rival = {
+	opinion = -25
+}
+
+weak_overlord = {
+	opinion = -1
+}
+
+competing_superpower = {
+	opinion = -25
+}
+
+religious_friend = {
+	opinion = 1
+}
+
+embargo = {
+	opinion = -15
+}
+
+opinion_military_access = {
+	opinion = 10
+}
+
+opinion_fleet_access = {
+	opinion = 10
+}
+
+##############
+# TIMED
+##############
+
+released_vassal = {
+	opinion = 300
+	yearly_decay = 5
+}
+
+lifted_excommunication = {
+	opinion = 50
+	yearly_decay = 5
+	max = 50
+}
+
+excommunicated_us = {
+	opinion = -100
+	yearly_decay = 5
+	min = -100
+}
+
+refused_crusade  = {
+	opinion = -100
+	yearly_decay = 5
+	min = -100
+}
+
+refused_religious_unity = {
+	opinion = -100
+	yearly_decay = 5
+	min = -100
+}
+
+refused_to_defend_empire = {
+	opinion = -50
+	yearly_decay = 5
+	min = -50
+}
+
+refused_join_war = {
+	opinion = -50
+	yearly_decay = 5
+	min = -50
+}
+
+refused_join_war_vs_us = {
+	opinion = 10
+	yearly_decay = 2
+	max = 10
+}
+
+answered_call_to_empire_elector = {
+	opinion = 100
+	yearly_decay = 3
+	max = 100
+}
+
+answered_call_to_empire = {
+	opinion = 50
+	yearly_decay = 3
+	max = 50
+}
+
+claimed_throne_of_imperial = {
+	opinion = -25
+	yearly_decay = 3
+	min = -25
+}
+
+claimed_throne_on_us = {
+	opinion = -100
+	yearly_decay = 3
+	min = -100
+}
+
+claimed_throne_other_rm = 
+{
+	opinion = -50
+	yearly_decay = 3
+	min = -50
+}
+
+refused_fleet_access = {
+	opinion = -10
+	yearly_decay = 1
+	min = -10
+}
+
+revoked_fleet_access = {
+	opinion = -20
+	yearly_decay = 1
+	min = -10
+}
+
+revoked_military_access = {
+	opinion = -20
+	yearly_decay = 1
+	min = -10
+}
+
+refused_military_access = {
+	opinion = -10
+	yearly_decay = 1
+	min = -10
+}
+
+vassal_broke_free = {
+	opinion = -100
+	yearly_decay = 5
+	min = -100
+}
+
+vassal_abandoned = {
+	opinion = -200
+	yearly_decay = 5
+	min = -200
+}
+
+elector_voted_for_us = 
+{
+	opinion = 25
+	yearly_decay = 2
+	max = 25
+}
+
+elector_stopped_voting_for_us = 
+{
+	opinion = -25
+	yearly_decay = 1
+	min = -25
+}
+
+liberated_province =
+{
+	opinion = 25
+	yearly_decay = 5
+	max = 25
+}
+
+defended_allied_territory =
+{
+	opinion = 10
+	yearly_decay = 2
+	max = 10
+}
+
+insulted = {
+	opinion = -50
+	yearly_decay = 5
+	max = -50
+	months = 120
+}
+
+revoke_elector_opinion = {
+	opinion = -50
+	yearly_decay = 5
+}
+
+honored_alliance = {
+	opinion = 10
+	yearly_decay = 1
+	max = 10
+}
+
+break_alliance = {
+	opinion = -50
+	yearly_decay = 1
+}
+
+break_marriage = {
+	opinion = -75
+	yearly_decay = 1
+}
+
+
+break_alliance_war = {
+	opinion = -100
+	yearly_decay = 1
+}
+
+dishonoured_alliance = {
+	opinion = -100
+	months = 0
+	yearly_decay = 1
+}
+
+declared_war_on_us = {
+	opinion = -25
+	months = 300
+	yearly_decay = 1
+}
+
+had_war_with_us = {
+	opinion = -15
+	yearly_decay = 1
+}
+
+declared_war_on_neighbor = {
+	opinion = -10
+	months = 120
+	yearly_decay = 1
+}
+
+violated_truce_us = {
+	opinion = -100
+	months = 1200
+	yearly_decay = 1
+}
+
+violated_truce_neighbor = {
+	opinion = -25
+	months = 300
+	yearly_decay = 1
+}
+
+separate_peace = {
+	opinion = -30
+	months = 360
+	yearly_decay = 1
+}
+
+fought_to_the_end = {
+	opinion = 10
+	months = 120
+	yearly_decay = 1
+	max = 20
+}
+
+conquered_province_no_claim = {
+	opinion = -5
+	months = 60
+	yearly_decay = 1
+}
+
+conquered_province_same_religion_group = {
+	opinion = -10
+	months = 0
+	yearly_decay = 1
+	min = -10
+}
+
+conquered_province_us = {
+	opinion = -25
+	months = 0
+	yearly_decay = 1
+}
+
+conquered_rival_province = {
+	opinion = 15
+	months = 0
+	yearly_decay = 1
+}
+
+gave_province_in_peace = {
+	opinion = 10
+	months = 0
+	yearly_decay = 1
+}
+
+declared_war_on_enemy = {
+	opinion = 10
+	months = 0
+	yearly_decay = 1
+}
+
+discovery_of_evil = {
+	opinion = -20
+	months = 0
+	yearly_decay = 5
+	min = -100
+}
+
+warned = {
+	opinion = -10
+	months = 0
+	yearly_decay = 1
+}
+
+improved_relation = {
+	opinion = 0
+	months = 0
+	yearly_decay = 3
+	max = 100
+	max_vassal = 200
+}
+
+sabotage_reputation = {
+	opinion = -50
+}
+
+aggressive_expansion = {
+	opinion = -1
+	months = 0
+	yearly_decay = 2	
+	min = -1000
+}
+
+enforced_peace_against = {
+	opinion = -10
+	months = 0
+	yearly_decay = 1
+}
+
+enforced_peace_for = {
+	opinion = 10
+	months = 0
+	yearly_decay = 1
+}
+
+improved_imperial_relations = {
+	opinion = 40
+	months = 240
+	yearly_decay = 0
+}
+
+returned_core_to_me = {
+	opinion = 40
+	yearly_decay = 1
+}
+
+released_in_peace = {
+	opinion = 100
+	yearly_decay = 1
+}
+
+hre_province_left = {
+	opinion = -50
+	yearly_decay = 1
+}
+
+fightinginside_japan = {
+	opinion = -25
+	yearly_decay = 1
+}
+
+##############
+# From Events!
+##############
+
+opinion_left_empire = {
+	opinion = -150
+	yearly_decay = 1
+}
+
+opinion_united_empire = {
+	opinion = -100
+	yearly_decay = 5
+}
+
+merchants_too_succesful = {
+	opinion = -25
+	years = 5
+	yearly_decay = 5
+}
+
+merchants_standing_down = {
+	opinion = 25
+	years = 5
+	yearly_decay = 5
+}
+
+mam_poem_recieved = {
+	opinion = 50
+	years = 10
+	yearly_decay = 5
+}
+
+mam_installed_ruler = {
+	opinion = 25
+	years = 25
+	yearly_decay = 1
+}
+
+mam_refused_james = {
+	opinion = -30
+	years = 10
+	yearly_decay = 3
+}
+
+mam_anti_ottoman_friends = {
+	opinion = 33
+	years = 33
+	yearly_decay = 1
+}
+
+mam_por_confronted = {
+	opinion = -40
+	years = 20
+	yearly_decay = 2
+}
+
+mam_persian_scheming = {
+	opinion = -30
+	years = 30
+	yearly_decay = 1
+}
+
+mlo_against_ambrosian = {
+	opinion = -40
+	years = 20
+	yearly_decay = 2
+}
+
+mlo_peace_of_lodi = {
+	opinion = 30
+	years = 15
+	yearly_decay = 2
+}
+
+hun_habsburgs_spurned = {
+	opinion = -40
+	years = 40
+	yearly_decay = 1
+}
+
+boh_papal_reconciled = {
+	opinion = 20
+	years = 20
+	yearly_decay = 1
+}
+
+boh_heretic_hussite = {
+	opinion = -30
+	years = 30
+	yearly_decay = 1
+}
+
+boh_protestant_king = {
+	opinion = -60
+	years = 15
+	yearly_decay = 4
+}
+
+cyp_famagusta_taken = {
+	opinion = -20
+	years = 20
+	yearly_decay = 1
+}
+
+cyp_famagusta_given = {
+	opinion = 20
+	years = 10
+	yearly_decay = 1
+}
+
+gen_trade_access_denied = {
+	opinion = -50
+	years = 25
+	yearly_decay = 2
+}
+
+gen_trade_given  = {
+	opinion = 10
+	years = 50
+}
+
+gen_pro_guelph = {
+	opinion = 20
+	years = 10
+	yearly_decay = 2
+}
+gen_pro_ghibellines = {
+	opinion = 20
+	years = 10
+	yearly_decay = 2
+}
+
+gen_anti_ghibellines = {
+	opinion = -30
+	years = 10
+	yearly_decay = 3
+}
+
+gen_anti_guelph = {
+	opinion = -30
+	years = 10
+	yearly_decay = 3
+}
+
+gen_andrea_doria_reform = {
+	opinion = 25
+	years = 25
+	yearly_decay = 1
+}
+
+nap_french_spurned = {
+	opinion = -25
+	years = 25
+	yearly_decay = 1
+}
+
+kol_bavarian_archbishop = {
+	opinion = 20
+	years = 40
+	yearly_decay = 0.5
+}
+
+kol_bavarian_archbishop_replaced = {
+	opinion = -20
+	years = 20
+	yearly_decay = 1
+}
+
+bav_against_habsburg = {
+	opinion = -50
+	years = 100
+	yearly_decay = 0.5
+}
+
+bav_reconcile_habsburg = {
+	opinion = 10
+	years = 10
+	yearly_decay = 1
+}
+
+bav_jesuits_rejected = {
+	opinion = -20
+	years = 20
+	yearly_decay = 1
+}
+
+oman_agressive_trade = {
+	opinion = -20
+	years = 40
+	yearly_decay = 0.5
+}
+
+ven_opinion_morean_confrontation = {
+	opinion = -30
+	years = 60
+	yearly_decay = 0.5
+}
+
+ven_venetian_first = {
+	opinion = -20
+	years = 100
+	yearly_decay = 0.2
+}
+
+ven_christian_first = {
+	opinion = 20
+	years = 100
+	yearly_decay = 0.2
+}
+
+ven_helping_mamelukes = {
+	opinion = -40
+	years = 40
+	yearly_decay = 1
+}
+
+pro_pragmatic_sanction = {
+	opinion = 10
+	years = 10
+	yearly_decay = 1
+}
+
+anti_pragmatic_sanction = {
+	opinion = -10
+	years = 10
+	yearly_decay = 1
+}
+
+eng_tolerates_lollards = {
+	opinion = -50
+	years = 50
+	yearly_decay = 1
+}
+
+eng_no_english_in_france = {
+	opinion = 50
+	years = 25
+	yearly_decay = 2
+}
+
+eng_refuse_to_give_up_france = {
+	opinion = -50
+	years = 50
+	yearly_decay = 1
+}
+
+accepted_supremacy_of_rome = {
+	opinion = 25
+	years = 25
+	yearly_decay = 1
+}
+
+eng_tolerates_religious_freedom = {
+	opinion = -25
+	years = 25
+	yearly_decay = 1
+}
+
+eng_captain_jenkins_incident = {
+	opinion = -10
+	years = 10
+	yearly_decay = 1
+}
+
+accepted_meuthen_agreement = {
+	opinion = 10
+	years = 10
+	yearly_decay = 1
+}
+
+denounced_meuthen_agreement = {
+	opinion = -10
+	years = 10
+	yearly_decay = 1
+}
+
+eng_harsh_punishment_of_catholics = {
+	opinion = -25
+	years = 25
+	yearly_decay = 1
+}
+
+eng_support_during_war_of_the_roses = {
+	opinion = 50
+	years = 50
+	yearly_decay = 1
+}
+
+eng_supported_rebels_during_war_of_the_roses = {
+	opinion = -50
+	years = 50
+	yearly_decay = 1
+}
+
+swe_supports_the_union = {
+	opinion = 25
+	years = 25
+	yearly_decay = 1
+}
+
+swe_renounced_the_union = {
+	opinion = -50
+	years = 25
+	yearly_decay = 2
+}
+
+swe_rejected_the_kalmar_recess = {
+	opinion = -50
+	years = 25
+	yearly_decay = 2
+}
+
+swe_honored_the_kalmar_recess = {
+	opinion = 10
+	years = 10
+	yearly_decay = 1
+}
+
+swe_claims_skane = {
+	opinion = -25
+	years = 5
+	yearly_decay = 5
+}
+
+swe_claims_gotland = {
+	opinion = -25
+	years = 5
+	yearly_decay = 5
+}
+
+swe_reconverted_to_catholisism = {
+	opinion = 50
+	years = 25
+	yearly_decay = 2
+}
+
+swe_political_alignment = {
+	opinion = 30
+	years = 10
+	yearly_decay = 3
+}
+
+rus_sacked_moscow = {
+	opinion = -50
+	years = 10
+	yearly_decay = 5
+}
+
+rus_orthodoxy_led_from_moscow = {
+	opinion = 25
+	years = 25
+	yearly_decay = 1
+}
+
+rus_ignored_vassal_demands = {
+	opinion = -25
+	years = 25
+	yearly_decay = 1
+}
+
+rus_paid_vassal_respect = {
+	opinion = 10
+	years = 10
+	yearly_decay = 1
+}
+
+rus_paid_vassal_tribute = {
+	opinion = 50
+	years = 25
+	yearly_decay = 2
+}
+
+rus_treaty_of_nerchiinsk = {
+	opinion = 50
+	years = 25
+	yearly_decay = 2
+}
+
+rus_refused_treaty_of_nerchiinsk = {
+	opinion = -50
+	years = 25
+	yearly_decay = 2
+}
+
+rus_claimed_western_siberia = {
+	opinion = -50
+	years = 25
+	yearly_decay = 2
+}
+
+rus_political_aggressions = {
+	opinion = -50
+	years = 25
+	yearly_decay = 2
+}
+
+rus_enemy_of_sweden = {
+	opinion = 30
+	years = 10
+	yearly_decay = 3
+}
+
+rus_claimed_courland = {
+	opinion = -25
+	years = 5
+	yearly_decay = 5
+}
+
+rus_did_not_claim_courland = {
+	opinion = 10
+	years = 5
+	yearly_decay = 2
+}
+
+rus_rejected_anjala_league = {
+	opinion = 10
+	years = 5
+	yearly_decay = 2
+}
+
+rus_received_grand_embassy = {
+	opinion = 25
+	years = 25
+	yearly_decay = 1
+}
+
+rus_rejected_grand_embassy = {
+	opinion = -25
+	years = 25
+	yearly_decay = 1
+}
+
+rus_invited_to_study_institutions = {
+	opinion = -25
+	years = 25
+	yearly_decay = 1
+}
+
+rus_overthrow_dimitri = {
+	opinion = -50
+	years = 10
+	yearly_decay = 5
+}
+
+spa_iberian_wedding = {
+	opinion = 50
+	years = 10
+	yearly_decay = 5
+}
+
+spa_iberian_wedding_negative = {
+	opinion = -50
+	years = 50
+	yearly_decay = 1
+}
+
+spa_declined_iberian_wedding = {
+	opinion = -25
+	years = 25
+	yearly_decay = 1
+}
+
+spa_ceded_malta = {
+	opinion = 100
+	years = 50
+	yearly_decay = 2
+}
+
+spa_ceded_malta_pap = {
+	opinion = 25
+	years = 25
+	yearly_decay = 1
+}
+
+spa_refused_ceding_malta = {
+	opinion = 25
+	years = 25
+	yearly_decay = 1
+}
+
+supported_rebels = {
+	opinion = -50
+	years = 10
+	yearly_decay = 5
+}
+
+claimed_italy = {
+	opinion = -75
+	years = 75
+	yearly_decay = 1
+}
+
+supported_france_military = {
+	opinion = 30
+	years = 10
+	yearly_decay = 3
+}
+
+supported_french_rebels_military = {
+	opinion = -50
+	years = 25
+	yearly_decay = 2
+}
+
+fra_claimed_naples = {
+	opinion = -75
+	years = 75
+	yearly_decay = 1
+}
+
+fra_did_not_claim_naples = {
+	opinion = 30
+	years = 10
+	yearly_decay = 3
+}
+
+renounced_italian_claims = {
+	opinion = 25
+	years = 25
+	yearly_decay = 1
+}
+
+samuel_de_champlain = {
+	opinion = 25
+	years = 25
+	yearly_decay = 1
+}
+
+claims_through_chambers_of_union = {
+	opinion = -50
+	years = 50
+	yearly_decay = 1
+}
+
+did_not_form_chambers_of_union = {
+	opinion = 30
+	years = 10
+	yearly_decay = 3
+}
+
+the_eden_agreement = {
+	opinion = 20
+	years = 10
+	yearly_decay = 2
+}
+
+refusal_of_the_eden_agreement = {
+	opinion = -20
+	years = 10
+	yearly_decay = 2
+}
+
+executed_monarch = {
+	opinion = -50
+	years = 25
+	yearly_decay = 2
+}
+
+did_not_support_rebels = {
+	opinion = 20
+	years = 10
+	yearly_decay = 2
+}
+
+broken_trade_agreement = {
+	opinion = -100
+	years = 50
+	yearly_decay = 0
+}
+
+honored_trade_agreement = {
+	opinion = 25
+	years = 25
+	yearly_decay = 1
+}
+
+trade_conflict = {
+	opinion = -100
+	years = 50
+	yearly_decay = 2
+}
+
+ceded_alexandria = {
+	opinion = 50
+	years = 50
+	yearly_decay = 1
+}
+
+crushed_shiite_revolt = {
+	opinion = -25
+	years = 25
+	yearly_decay = 1
+}
+
+border_aggression = {
+	opinion = -25
+	years = 25
+	yearly_decay = 1
+}
+
+successful_diplomacy = {
+	opinion = 20
+	years = 10
+	yearly_decay = 2
+}
+
+full_reconciliation = {
+	opinion = 50
+	years = 50
+	yearly_decay = 1
+}
+
+moderate_treaty = {
+	opinion = 25
+	years = 25
+	yearly_decay = 1
+}
+
+allows_the_patriarchate = {
+	opinion = 25
+	years = 25
+	yearly_decay = 1
+}
+
+closed_down_the_patriarchate = {
+	opinion = -100
+	years = 50
+	yearly_decay = 2
+}
+
+por_portuguese_privateers = {
+	opinion = -50
+	years = 25
+	yearly_decay = 2
+}
+
+careful_trade_expansion = {
+	opinion = 25
+	years = 25
+	yearly_decay = 1
+}
+
+no_holy_inquisition = {
+	opinion = -50
+	years = 25
+	yearly_decay = 2
+}
+
+prepares_crusade = {
+	opinion = -50
+	years = 25
+	yearly_decay = 2
+}
+
+opinion_angry = {
+	opinion = -40
+	years = 5
+	yearly_decay = 2
+}
+
+opinion_gossip = {
+	opinion = 10
+	years = 5
+	yearly_decay = 2
+}
+
+opinion_daimyo_gift = {
+	opinion = 50
+	years = 5
+	yearly_decay = 2
+}
+
+opinion_insulted = {
+	opinion = -20
+	years = 5
+	yearly_decay = 2
+}
+
+opinion_amused = {
+	opinion = 20
+	years = 5
+	yearly_decay = 2
+}
+
+opinion_evil_gossip = {
+	opinion = -20
+	years = 5
+	yearly_decay = 2
+}
+
+opinion_ninja_attack = {
+	opinion = -20
+	years = 5
+	yearly_decay = 2
+}
+
+opinion_grateful = {
+	opinion = 20
+	years = 5
+	yearly_decay = 2
+}
+
+opinion_irritated = {
+	opinion = -10
+	years = 5
+	yearly_decay = 2
+}
+
+opinion_confront_spies = {
+	opinion = -70
+	years = 5
+	yearly_decay = 2
+}
+
+opinion_traitor = {
+	opinion = -50
+	years = 5
+	yearly_decay = 2
+}
+
+opinion_wokou = {
+	opinion = -20
+	years = 5
+	yearly_decay = 2
+}
+
+opinion_left_in_peace = {
+	opinion = 20
+	years = 5
+	yearly_decay = 2
+}
+
+opinion_pleased_apology = {
+	opinion = 10
+	years = 5
+	yearly_decay = 2
+}
+
+opinion_displeased = {
+	opinion = -50
+	years = 5
+	yearly_decay = 2
+}
+
+opinion_loyal_to_king = {
+	opinion = -50
+	years = 5
+	yearly_decay = 2
+}
+
+opinion_loyal_to_pope = {
+	opinion = 50
+	years = 5
+	yearly_decay = 2
+}
+
+opinion_japan_discovered = {
+	opinion = 20
+	years = 5
+	yearly_decay = 2
+}
+
+opinion_dynastic_helper = {
+	opinion = 40
+	years = 5
+	yearly_decay = 2
+}
+
+opinion_ignore_dynasty = {
+	opinion = -40
+	years = 5
+	yearly_decay = 2
+}
+
+opinion_marriage_offer = {
+	opinion = 50
+	years = 5
+	yearly_decay = 2
+}
+
+opinion_witchcraft = {
+	opinion = -75
+	years = 5
+	yearly_decay = 2
+}
+
+opinion_united_dynasties = {
+	opinion = 100
+	years = 20
+	yearly_decay = 2
+}
+
+opinion_refused_marriage = {
+	opinion = -10
+	years = 10
+	yearly_decay = 2
+}
+
+opinion_electoral_state_accept = {
+	opinion = 100
+	years = 10
+	yearly_decay = 2
+}
+
+opinion_electoral_state_decline = {
+	opinion = -100
+	years = 10
+	yearly_decay = 2
+}
+
+opinion_electoral_state_removed_mend = {
+	opinion = -50
+	years = 10
+	yearly_decay = 2
+}
+
+opinion_electoral_state_removed = {
+	opinion = -100
+	years = 10
+	yearly_decay = 2
+}
+
+opinion_religious_independence = {
+	opinion = -400
+	years = 100
+	yearly_decay = 2
+}
+
+opinion_declined_legatus_natus = {
+	opinion = -50
+	years = 10
+	yearly_decay = 2
+}
+
+opinion_munificent_ally = {
+	opinion = 50
+	years = 10
+	yearly_decay = 2
+}
+
+opinion_reduced_war_expenditures = {
+	opinion = -80
+	years = 10
+	yearly_decay = 2
+}
+
+opinion_supports_raids = {
+	opinion = -20
+	years = 10
+	yearly_decay = 2
+}
+
+opinion_allows_raids = {
+	opinion = -10
+	years = 10
+	yearly_decay = 2
+}
+
+opinion_suppresses_raids = {
+	opinion = 10
+	years = 10
+	yearly_decay = 2
+}
+
+opinion_declined_independent_state_support = {
+	opinion = -20
+	years = 10
+	yearly_decay = 2
+}
+
+opinion_pope_religious_tolerance = {
+	opinion = -100
+	years = 10
+	yearly_decay = 2
+}
+
+opinion_accepted_primas_germaniae = {
+	opinion = -50
+	years = 10
+	yearly_decay = 2
+}
+
+opinion_supported_primas_germaniae = {
+	opinion = 50
+	years = 10
+	yearly_decay = 2
+}
+
+opinion_congratulated_new_primas_germaniae = {
+	opinion = 25
+	years = 10
+	yearly_decay = 2
+}
+
+opinion_lost_primas_germaniae = {
+	opinion = -25
+	years = 10
+	yearly_decay = 2
+}
+
+opinion_improved_relations = {
+	opinion = 30
+	years = 10
+	yearly_decay = 2
+}
+
+opinion_eased_tension = {
+	opinion = 60
+	years = 10
+	yearly_decay = 2
+}
+
+opinion_granted_privileges = {
+	opinion = 20
+	years = 10
+	yearly_decay = 2
+}
+
+opinion_not_grant_privileges = {
+	opinion = -20
+	years = 10
+	yearly_decay = 2
+}
+
+opinion_diplomatic_solution = {
+	opinion = 50
+	years = 10
+	yearly_decay = 2
+}
+
+opinion_supports_dissidents = {
+	opinion = -60
+	years = 10
+	yearly_decay = 2
+}
+
+opinion_accepted_bribe = {
+	opinion = 40
+	years = 10
+	yearly_decay = 2
+}
+
+opinion_declined_bribe = {
+	opinion = -40
+	years = 10
+	yearly_decay = 2
+}
+
+opinion_upset_pope = {
+	opinion = -100
+	years = 10
+	yearly_decay = 2
+}
+
+opinion_gold_privateers = {
+	opinion = -40
+	years = 10
+	yearly_decay = 2
+}
+
+opinion_press_issue = {
+	opinion = -30
+	years = 10
+	yearly_decay = 2
+}
+
+opinion_declined_emperor_province = {
+	opinion = -50
+	years = 10
+	yearly_decay = 2
+}
+
+opinion_protect_faith = {
+	opinion = -50
+	years = 10
+	yearly_decay = 2
+}
+
+opinion_disappointed_pope = {
+	opinion = -30
+	years = 10
+	yearly_decay = 2
+}
+
+opinion_too_tolerate = {
+	opinion = -100
+	years = 10
+	yearly_decay = 2
+}
+
+opinion_drastic_changes = {
+	opinion = -30
+	years = 10
+	yearly_decay = 2
+}
+
+opinion_sent_aid = {
+	opinion = 40
+	years = 10
+	yearly_decay = 2
+}
+
+opinion_forceful_conversion = {
+	opinion = -50
+	years = 10
+	yearly_decay = 2
+}
+
+opinion_beheaded_nobles = {
+	opinion = -25
+	years = 10
+	yearly_decay = 2
+}
+
+opinion_reconcile = {
+	opinion = 20
+	years = 10
+	yearly_decay = 2
+}
+
+opinion_ignorant_monarch = {
+	opinion = -25
+	years = 10
+	yearly_decay = 2
+}
+
+opinion_supportive_monarch = {
+	opinion = 10
+	years = 10
+	yearly_decay = 2
+}
+
+opinion_backward_monarch = {
+	opinion = -25
+	years = 10
+	yearly_decay = 2
+}
+
+opinion_union_in_name = {
+	opinion = -25
+	years = 10
+	yearly_decay = 2
+}
+
+opinion_bad_monarch = {
+	opinion = -25
+	years = 10
+	yearly_decay = 2
+}
+
+opinion_one_and_same = {
+	opinion = 50
+	years = 10
+	yearly_decay = 2
+}
+
+opinion_designated_staple_port = {
+	opinion = -150
+	years = 10
+	yearly_decay = 1
+}
+
+opinion_restored_holy_see = {
+	opinion = 100
+	years = 100
+	yearly_decay = 1
+}
+
+opinion_demote_pope = {
+	opinion = -60
+	years = 10
+	yearly_decay = 1
+}
+
+opinion_pope_realise_demotion = {
+	opinion = -100
+	years = 10
+	yearly_decay = 1
+}
+
+opinion_revoked_demotion = {
+	opinion = 50
+	years = 10
+	yearly_decay = 1
+}
+
+opinion_embraced_counter_reformation = {
+	opinion = 75
+	years = 50
+	yearly_decay = 1
+}
+
+opinion_green_standard = {
+	opinion = -100
+	years = 20
+	yearly_decay = 1
+}
+
+opinion_abandoned_hre = {
+	opinion = -100
+	years = 25
+	yearly_decay = 1
+}
+
+opinion_unlawful_territory = {
+	opinion = -25
+	years = 25
+	yearly_decay = 1
+}
+
+catholic_obstructing_church = {
+	opinion = -10
+	years = 10
+}
+
+hre_province_restored = {
+	opinion = 20
+	years = 20
+	yearly_decay = 1
+}
+
+opinion_annex_part_of_empire = {
+	opinion = -25
+	years = 20
+	yearly_decay = 1
+}
+
+opinion_annex_vassal = {
+	opinion = -30
+	years = 20
+	yearly_decay = 1
+}
+
+opinion_denying_the_holy_mother = {
+	opinion = -20
+	years = 20
+	yearly_decay = 1
+}
+
+sent_gift = {
+	opinion = 5
+	months = 60
+	max = 25
+}
+
+opinion_enforced_scandinavian_constitution = {
+	opinion = -30
+	years = 25
+}
+
+opinion_discarded_scandinavian_constitution = {
+	opinion = 30
+	years = 25
+}
+
+opinion_common_enemy = {
+	opinion = 30
+}
+
+opinion_ignored_claim = {
+	opinion = 10
+}
+
+opinion_claim_slesvig_holstein = {
+	opinion = -25
+}
+
+opinion_relinquished_claim = {
+	opinion = 15
+}
+
+opinion_supported_monarch = {
+	opinion = 50
+	years = 10
+	yearly_decay = 5
+}
+
+religious_compromise = {
+	opinion = -10
+	years = 50
+	yearly_decay = 0
+}
+
+favors_catholics_catholics = {
+	opinion = 10
+	years = 50
+	yearly_decay = 0
+}
+
+favors_catholics_protestants = {
+	opinion = -25
+	years = 50
+	yearly_decay = 0
+}
+
+favors_protestants_protestants = {
+	opinion = 10
+	years = 50
+	yearly_decay = 0
+}
+
+favors_protestants_catholics = {
+	opinion = -25
+	years = 50
+	yearly_decay = 0
+}
+
+royal_letter_of_bohemia = {
+	opinion = 25
+	years = 25
+	yearly_decay = 1
+}
+
+refused_royal_letter_of_bohemia = {
+	opinion = -50
+	years = 50
+	yearly_decay = 1
+}
+
+opinion_pol_religious_freedom = {
+	opinion = -100
+	years = 50
+	yearly_decay = 1
+}
+opinion_pol_true_faith = {
+	opinion = 10
+	years = 50
+	yearly_decay = 1
+}
+opinion_polish_aggressions = {
+	opinion = -150
+	years = 50
+	yearly_decay = 3
+}
+
+opinion_accepted_jesuits = {
+	opinion = 50
+	years = 10
+	yearly_decay = 1
+}
+
+opinion_ideas = {
+	opinion = 50
+	years = 10
+	yearly_decay = 1
+}
+
+opinion_negotiated_rebels = {
+	opinion = -10
+	years = 5
+	yearly_decay = 2
+}
+opinion_suppressed_rebels = {
+	opinion = 10
+	years = 5
+}
+joined_league_of_augsburg = {
+	opinion = -20
+	yearly_decay = 1
+}
+
+not_league_of_augsburg = {
+	opinion = 20
+	yearly_decay = 1
+}
+schmalkaldic_league_protestant = {
+	opinion = 50
+	yearly_decay = 2.5
+}
+schmalkaldic_league_catholic = {
+	opinion = -50
+	yearly_decay = 2.5
+}
+schmalkaldic_league_not_join = {
+	opinion = -10
+	yearly_decay = 1
+}
+
+catholic_league_catholic = {
+	opinion = 50
+	yearly_decay = 2.5
+}
+
+catholic_league_protestant= {
+	opinion = -50
+	yearly_decay = 2.5
+}
+
+evangelical_union_protestant = {
+	opinion = 50
+	yearly_decay = 2.5
+}
+
+evangelical_union_catholic = {
+	opinion = -50
+	yearly_decay = 2.5
+}
+
+league_of_cambrai_ven = {
+	opinion = -20
+	yearly_decay = 1
+}
+
+opinion_good_relations = {
+	opinion = 50
+	yearly_decay = 1
+}
+opinion_pleased = {
+	opinion = 20
+	yearly_decay = 1
+}
+opinion_mildly_displeased = {
+	opinion = -10
+	yearly_decay = 1
+}
+
+succesful_embassy = {
+	opinion = 30
+	yearly_decay = 1
+}
+reconciling_differences = {
+	opinion = 20
+	yearly_decay = 1
+}
+
+opinion_captured_alexandria_great_carrack = {
+	opinion = -75
+	yearly_decay = 1	
+}
+
+opinion_negotiated_peace = {
+	opinion = 50
+	yearly_decay = 1
+}
+
+opinion_friendliness = {
+	opinion = 50
+}
+
+opinion_pierre_daubusson = {
+	opinion = 50
+	yearly_decay = 1
+}
+
+opinion_interfered_in_war = {
+	opinion = -30
+	yearly_decay = 1
+}
+
+opinion_sent_help = {
+	opinion = 20
+	yearly_decay = 1
+}
+
+opinion_refused_send_help = {
+	opinion = -30
+	yearly_decay = 1
+}
+
+sankin_kotai = {
+	opinion = 50
+	yearly_decay = 2
+}
+
+opinion_sword_hunt = {
+	opinion = -50
+	yearly_decay = 2	
+}
+
+border_friction_from_event = {
+	opinion = -50
+	yearly_decay = 2	
+}
+
+missionaries_rebuffed = {
+	opinion = -50
+	yearly_decay = -1
+}
+
+missionaries_accepted = {
+	opinion = 20
+	yearly_decay = -1
+}
+
+opinion_military_aid = {
+	opinion = 100
+	yearly_decay = -1
+}
+
+opinion_refused_military_aid = {
+	opinion = -25
+	yearly_decay = -1
+}
+
+##################################################
+# Muslim DLC
+##################################################
+
+completed_hajj = {
+	opinion = 10
+	yearly_decay = 1
+}
+
+invited_eid_al_fitr = {
+	opinion = 10
+	yearly_decay = 1	
+}
+
+##################################################
+# USA DLC
+##################################################
+
+opinion_supplied_indians = {
+	opinion = -50
+	yearly_decay = 2
+}
+opinion_supplied_weapons = {
+	opinion = 20
+	yearly_decay = 1
+}
+
+opinion_treaty_of_amity_and_commerce = {
+	opinion = 25
+	yearly_decay = 1
+}
+
+opinion_disgruntled = {
+	opinion = -25
+	yearly_decay = 1	
+}
+
+opinion_disappointed = {
+	opinion = -20
+	yearly_decay = 1
+}
+
+opinion_acknowledged_independence = {
+	opinion = 20
+	yearly_decay = 1
+}
+
+opinion_florida = {
+	opinion = 50
+	yearly_decay = 1
+}
+
+opinion_louisiana = {
+	opinion = 50
+	yearly_decay = 1
+}
+
+opinion_warhawks = {
+	opinion = -100
+	yearly_decay = 2
+}
+
+opinion_doves = {
+	opinion = 50
+	yearly_decay = 2
+}
+
+opinion_correct_ruler = {
+	opinion = 50
+	yearly_decay = 2
+}
+
+opinion_yay_independence = {
+	opinion = 50
+	yearly_decay = 2
+}
+
+opinion_nay_independence = {
+	opinion = -50
+	yearly_decay = 2
+}
+
+opinion_enforced_religious_unity = {
+	opinion = -25
+	years = 25
+	yearly_decay = 1
+}
+
+rejected_alliance = {
+	opinion = -25
+	yearly_decay = 1
+}

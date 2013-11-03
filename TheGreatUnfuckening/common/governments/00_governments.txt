@@ -1,0 +1,644 @@
+#Do not change tags in here without changing every other reference to them.
+#If adding new forms of governemnts, make sure they are uniquely named.
+
+#Uses all 'modifiers' possible that's exported as a Modifier.
+
+# valid_for_new_country determines which governments can be converted to normally
+# allow_convert determines which governments can be force-converted to and from via CBs
+
+#ai_will_do will only check if it's valid,and won't break unions or switch to republic from monarchy, nor check to convert to something earlier in the file.
+
+####################################
+#
+#Monarchies
+#
+####################################
+
+despotic_monarchy = {
+	monarchy = yes
+	
+	valid_for_new_country = yes
+	
+	ai_will_do = {
+		factor = 0
+	}
+
+	#bonus
+	global_revolt_risk = -1
+	unjustified_demands = -0.1
+}
+
+feudal_monarchy = {
+	monarchy = yes
+	
+	valid_for_new_country = yes
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 0
+			NOT = { government = despotic_monarchy }
+		}
+		modifier = {
+			factor = 0
+			NOT = {
+				has_idea_group = aristocracy_ideas
+			}
+		}
+	}
+	
+	#bonus
+	vassal_income = 0.1
+	global_manpower_modifier = 0.1
+}
+
+administrative_monarchy = {
+	monarchy = yes
+	
+	valid_for_new_country = yes
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 0
+			NOT = { 
+				government = despotic_monarchy 
+				government = feudal_monarchy
+			}
+		}
+		modifier = {
+			factor = 0
+			NOT = {
+				has_idea_group = economic_ideas
+				has_idea_group = trade_ideas
+			}
+		}		
+	}
+
+	#bonus
+	production_efficiency = 0.1
+	global_tax_modifier = 0.05
+}
+
+absolute_monarchy = {
+	monarchy = yes
+	
+	valid_for_new_country = yes
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 0
+			NOT = { 
+				government = despotic_monarchy 
+				government = feudal_monarchy
+			}
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				has_idea_group = economic_ideas
+				has_idea_group = trade_ideas
+			}
+		}
+	}
+	
+	#bonus
+	discipline = 0.10
+	global_revolt_risk = -1
+}
+
+constitutional_monarchy = {
+	monarchy = yes
+	
+	valid_for_new_country = yes
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 0
+			NOT = { government = administrative_monarchy }
+		}
+	}
+
+	#bonus
+	prestige_decay = -0.01
+	legitimacy = 1
+	manpower_recovery_speed = 0.1
+}
+
+enlightened_despotism = {
+	monarchy = yes
+	
+	valid_for_new_country = yes
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 0
+			NOT = { government = absolute_monarchy }
+		}
+	}
+
+	#bonus
+	global_spy_defence = 0.20
+	core_creation = -0.05
+	global_manpower_modifier = 0.1
+}
+
+revolutionary_empire = {
+	monarchy = yes
+	
+	valid_for_new_country = no
+	
+	ai_will_do = {
+		factor = 0
+	}
+	
+	#bonus
+	army_tradition = 1
+	global_manpower_modifier = 0.25
+	land_morale = 0.10
+}
+
+
+####################################
+#
+#Republics
+#
+####################################
+
+merchant_republic = {
+	republic = yes
+
+	valid_for_new_country = yes
+	
+	duration = 4
+
+	republican_name = yes
+	royal_marriage = no
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 0 
+			NOT = { 
+				government = noble_republic
+				government = administrative_republic
+			}
+		}		
+		modifier = {
+			factor = 0 
+			NOT = { has_idea_group = trade_ideas }
+		}
+		modifier = {
+			factor = 0 
+			NOT = { capital_scope = { has_port = yes } }
+		}		
+	}
+
+	#bonus
+	global_trade_power = 0.10
+	merchants = 1
+}
+
+noble_republic = {
+	republic = yes
+	
+	valid_for_new_country = yes
+	
+	duration = 8
+
+	republican_name = yes
+	
+	ai_will_do = {
+		factor = 0
+	}
+
+	#bonus
+	tolerance_heretic = 1
+	tolerance_heathen = 1
+	land_morale = 0.1
+}
+
+administrative_republic = {
+	republic = yes
+	
+	valid_for_new_country = yes
+	
+	duration = 5
+
+	republican_name = yes
+	royal_marriage = no
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 0
+			NOT = { 
+				AND = {
+					government = merchant_republic
+					capital_scope = { has_port = no }
+				}
+				AND = {
+					government = republican_dictatorship
+					NOT = { dip = 4 }
+					NOT = { adm = 4 }
+					NOT = { mil = 4 }
+				}
+			}
+		}
+	}
+
+	#bonus
+	tolerance_heretic = 1
+	tolerance_heathen = 1
+	production_efficiency = 0.1
+}
+
+republican_dictatorship = {
+	republic = yes
+	
+	valid_for_new_country = yes
+
+	republican_name = yes
+	royal_marriage = no
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 0
+			NOT = { 
+				AND = {
+					government = merchant_republic
+					capital_scope = { has_port = no }
+				}
+				government = administrative_republic
+				government = constitutional_republic
+			}
+		}
+		modifier = {
+			factor = 0
+			NOT = {
+				AND = {
+					dip = 5
+					adm = 5
+					mil = 5
+				}
+			}
+		}
+	}
+	
+	#bonus
+	tolerance_heretic = 1
+	tolerance_heathen = 1
+	land_morale = 0.2
+}
+
+constitutional_republic = {
+	republic = yes
+	
+	valid_for_new_country = yes
+	
+	duration = 4
+	
+	republican_name = yes
+	royal_marriage = no
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 0
+			NOT = { 
+				government = administrative_republic
+				AND = {
+					government = merchant_republic
+					capital_scope = { has_port = no }
+				}
+				AND = {
+					government = republican_dictatorship
+					NOT = { dip = 4 }
+					NOT = { adm = 4 }
+					NOT = { mil = 4 }
+				}
+			}
+		}
+	}
+
+	#bonus
+	tolerance_heretic = 1
+	tolerance_heathen = 1
+	production_efficiency = 0.2
+}
+
+bureaucratic_despotism = {
+	republic = yes
+	
+	valid_for_new_country = yes
+	
+	royal_marriage = no
+	
+	ai_will_do = {
+		factor = 0
+	}
+
+	#bonus
+	tolerance_heretic = 1
+	tolerance_heathen = 1
+	stability_cost_modifier = -0.20
+}
+
+revolutionary_republic = {
+	republic = yes
+	
+	valid_for_new_country = no
+	
+	duration = 4
+
+	republican_name = yes
+	royal_marriage = no
+	
+	ai_will_do = {
+		factor = 0
+	}
+	
+	#bonus
+	tolerance_heretic = 2
+	tolerance_heathen = 2
+	land_morale = 0.1
+}
+
+
+####################################
+#
+#Religious Governments
+#
+####################################
+
+theocratic_government = {
+	religion = yes
+	
+	valid_for_new_country = yes
+	
+	royal_marriage = no
+	
+	ai_will_do = {
+		factor = 0
+	}
+	
+	#bonus
+	tolerance_own = 2
+	tolerance_heretic = -2
+	papal_influence = 1
+}
+
+papal_government = {
+	religion = yes
+	papacy = yes
+	
+	valid_for_new_country = no
+	allow_convert = no
+
+	royal_marriage = no
+	
+	allow_convert = no
+	
+	ai_will_do = {
+		factor = 0
+	}
+	
+	#bonus
+	tolerance_own = 3
+	tolerance_heretic = -2
+	prestige = 1
+}
+
+
+####################################
+#
+#Tribal Governments
+#
+####################################
+
+steppe_horde = {
+	monarchy = yes
+	tribal = yes
+	nomad = yes
+	
+	valid_for_new_country = no
+	allow_convert = no
+	
+	ai_will_do = {
+		factor = 0
+	}
+
+	#bonus
+	global_manpower_modifier = 0.5
+	land_forcelimit_modifier = 0.5
+	
+	#malus
+	relations_decay_of_me = -0.5
+}
+
+tribal_despotism = {
+	monarchy = yes
+	tribal = yes
+	
+	valid_for_new_country = yes
+	
+	ai_will_do = {
+		factor = 0
+	}
+
+	#bonus
+	core_creation = -0.1
+	
+	#malus
+	global_revolt_risk = 1
+	global_prov_trade_power_modifier = -1.0
+}
+
+tribal_federation = {
+	monarchy = yes
+	tribal = yes
+	
+	valid_for_new_country = yes
+
+	ai_will_do = {
+		factor = 0
+	}
+	
+	#bonus
+	land_forcelimit_modifier = 0.2
+	global_manpower_modifier = 0.2
+
+	#malus
+	global_prov_trade_power_modifier = -1.0
+}
+
+tribal_democracy = {
+	republic = yes
+	tribal = yes
+	
+	valid_for_new_country = yes
+	
+	republican_name = yes
+	royal_marriage = no
+	
+	ai_will_do = {
+		factor = 0
+	}
+
+	#bonus
+	stability_cost_modifier = -0.33
+	#malus
+	technology_cost = 0.1
+	global_prov_trade_power_modifier = -1.0
+}
+
+
+##########################################
+#
+#Unique Governments for special countries
+#
+##########################################
+
+#SpecialforMilan
+ambrosian_republic = {
+	republic = yes
+	
+	valid_for_new_country = no
+	
+	duration = 3
+	
+	republican_name = yes
+	royal_marriage = no
+
+	#bonus
+	global_tax_modifier = 0.10
+	land_morale = 0.05
+}
+
+# Special for the Dutch
+dutch_republic = {
+	republic = yes
+	duration = 0 # rule for life.
+	
+	valid_for_new_country = no
+	allow_convert = no
+	
+	republican_name = no
+	royal_marriage = yes
+
+	#bonus
+	
+	naval_forcelimit_modifier = 0.33
+	global_trade_income_modifier = 0.10
+	
+}
+
+# Archduchy
+archduchy = {
+	monarchy = yes
+	
+	valid_for_new_country = no
+	allow_convert = no
+	
+	#bonus
+	vassal_income = 0.1
+	diplomatic_upkeep = 1
+	global_manpower_modifier = 0.1
+}
+
+# China
+celestial_empire = {
+	monarchy = yes
+	
+	valid_for_new_country = no
+	allow_convert = no
+	
+	global_revolt_risk = -3
+}
+
+# Arab Countries, Earlygame
+iqta = {
+	monarchy = yes
+	
+	valid_for_new_country = no
+	allow_convert = no
+
+	#bonus
+	vassal_income = 0.33
+	heir_chance = 1.0
+}
+
+#Japanese vassals
+daimyo = {
+	monarchy = yes
+	
+	valid_for_new_country = no
+	allow_convert = no
+	
+	#bonus
+	land_morale = 0.10
+	infantry_power = 0.10
+}
+
+#Japan itself before unification.
+shogunate = {
+	monarchy = yes
+	
+	valid_for_new_country = no
+	allow_convert = no
+	
+	allow_vassal_war = yes
+	allow_vassal_alliance = yes
+	
+	#bonus
+	diplomatic_upkeep = 4
+}
+
+#Byzantine Special.
+imperial_government = {
+	monarchy = yes
+	
+	valid_for_new_country = no
+	allow_convert = no
+	
+	#bonus
+	land_morale = 0.05
+	vassal_income = 0.1
+}
+
+### USA specific governments ###
+
+american_republic = {
+	republic = yes
+	
+	duration = 7
+	
+	republican_name = yes
+	royal_marriage = no
+	
+	valid_for_new_country = no
+	allow_convert = no
+	
+	# Bonus
+	stability_cost_modifier = -0.1
+}
+
+federal_republic = {
+	republic = yes
+	
+	duration = 4
+	
+	republican_name = yes
+	royal_marriage = no
+	
+	valid_for_new_country = no
+	allow_convert = no
+	
+	# Bonus
+	diplomatic_reputation = 2
+	global_spy_defence = 0.10
+}

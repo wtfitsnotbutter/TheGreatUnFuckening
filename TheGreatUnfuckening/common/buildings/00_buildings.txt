@@ -1,0 +1,2432 @@
+# Do not change tags in here without changing every other reference to them.
+# If adding new buildings, make sure they are uniquely named.
+
+# cost = x #==> cost in $ to build (subject to other modifiers)
+# time = x #==> number of months to build.
+# previous = x # a building that is the prerequisite of this building
+# modifier = m # a modifier on the province that the building gives
+# trigger = t # an and trigger that needs to be fullfilled to build and keep the building
+# one_per_country = yes/no # if yes, only one of these can exist in a country
+# manufactory = { trade_good trade_good } # list of trade goods that get a production bonus
+# destroy_on_conquest = yes/no # destroy this building if conquered
+# onmap = yes/no # show as a sprite on the map
+# category = x # the category used for labels and such
+# monarch_power =adm/dip/mil
+
+# FROM = owner
+# ROOT = province
+
+# Government
+temple = {
+	cost = 50
+	time = 12
+	modifier = {
+		tax_income = 1
+	}
+	destroy_on_conquest = yes
+	spare_on_core = yes
+	category = 1
+	
+	monarch_power = ADM
+	
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 2.0
+			is_capital = yes
+		}
+		modifier = {
+			factor = 4.0
+			is_overseas = no
+		}
+		modifier = {
+			factor = 0.25
+			is_overseas = yes
+		}	
+	}
+}
+
+courthouse = {
+	previous = temple
+	cost = 75
+	time = 12
+	modifier = {
+		local_revolt_risk = -1
+		papal_influence = 0.05
+	}
+	destroy_on_conquest = yes
+	spare_on_core = yes
+	
+	monarch_power = ADM
+	
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 0.5
+			always = yes
+		}
+		modifier = {
+			factor = 2.0
+			is_capital = yes
+		}
+		modifier = {
+			factor = 0.25
+			is_overseas = yes
+		}
+		modifier = {
+			factor = 0.75
+			NOT = { revolt_risk = 1 }
+		}
+	}
+}
+
+spy_agency = {
+	previous = courthouse
+	cost = 100
+	time = 12
+	modifier = {
+		local_spy_defence = 0.25
+		local_defensiveness = 0.10
+	}
+	destroy_on_conquest = yes
+	spare_on_core = yes
+	
+	monarch_power = ADM
+	
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 0.5
+			always = yes
+		}		
+		modifier = {
+			factor = 2.0
+			is_capital = yes
+		}
+		modifier = {
+			factor = 0.25
+			is_overseas = yes
+		}
+	}	
+}
+
+town_hall = {
+	previous = spy_agency
+	cost = 150
+	time = 12
+	modifier = {
+		local_tax_modifier = 0.20
+		local_defensiveness = 0.10
+	}
+	destroy_on_conquest = yes
+	spare_on_core = yes
+	
+	monarch_power = ADM
+	
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 0.5
+			always = yes
+		}	
+		modifier = {
+			factor = 2.0
+			is_capital = yes
+		}
+		modifier = {
+			factor = 0.25
+			is_overseas = yes
+		}
+	}	
+}
+
+college = {
+	previous = town_hall
+	cost = 250
+	time = 24
+	modifier = {
+		local_revolt_risk = -1
+		local_spy_defence = 0.25
+	}
+	destroy_on_conquest = yes
+	monarch_power = ADM
+	
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 0.5
+			always = yes
+		}		
+		modifier = {
+			factor = 2.0
+			is_capital = yes
+		}
+		modifier = {
+			factor = 0.25
+			is_overseas = yes
+		}
+		modifier = {
+			factor = 0.75
+			NOT = { revolt_risk = 1 }
+		}		
+	}		
+}
+
+cathedral = {
+	previous = college
+	cost = 500
+	time = 24
+	modifier = {
+		local_revolt_risk = -2
+		papal_influence = 5
+		local_spy_defence = 0.10
+	}
+	destroy_on_conquest = yes
+	category = 1
+	
+	monarch_power = ADM
+	
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 0.5
+			always = yes
+		}		
+		modifier = {
+			factor = 2.0
+			is_capital = yes
+		}
+		modifier = {
+			factor = 0.25
+			is_overseas = yes
+		}
+		modifier = {
+			factor = 0.75
+			NOT = { revolt_risk = 1 }
+		}		
+	}
+}
+
+# Land
+armory = {
+	cost = 50
+	time = 12
+	modifier = {
+		regiment_recruit_speed = -0.1
+		local_regiment_cost = -0.05
+		local_manpower = 0.025
+	}
+	destroy_on_conquest = yes
+	category = 2
+	spare_on_core = yes
+	
+	monarch_power = MIL
+	
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 2.0
+			is_overseas = no
+		}	
+		modifier = {
+			factor = 2.0
+			is_capital = yes
+		}
+		modifier = {
+			factor = 0.25
+			is_overseas = yes
+		}
+	}
+}
+
+training_fields = {
+	previous = armory
+	cost = 75
+	time = 12
+	modifier = {
+		regiment_recruit_speed = -0.1
+		local_regiment_cost = -0.05
+		local_manpower = 0.025
+	}
+	destroy_on_conquest = yes
+	spare_on_core = yes
+	
+	monarch_power = MIL
+	
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 2.0
+			is_overseas = no
+		}		
+		modifier = {
+			factor = 2.0
+			is_capital = yes
+		}
+		modifier = {
+			factor = 0.25
+			is_overseas = yes
+		}
+	}
+}
+
+barracks = {
+	previous = training_fields
+	cost = 100
+	time = 12
+	modifier = {
+		local_regiment_cost = -0.05
+		local_manpower = 0.05
+	}
+	destroy_on_conquest = yes
+	spare_on_core = yes
+	
+	monarch_power = MIL
+	
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 2.0
+			is_overseas = no
+		}				
+		modifier = {
+			factor = 2.0
+			is_capital = yes
+		}
+		modifier = {
+			factor = 0.25
+			is_overseas = yes
+		}
+	}
+}
+
+regimental_camp = {
+	previous = barracks
+	cost = 150
+	time = 12
+	modifier = {
+		local_manpower_modifier = 0.2
+	}
+	destroy_on_conquest = yes
+	spare_on_core = yes
+	
+	monarch_power = MIL
+	
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 0.33
+			NOT = {
+				trade_goods = iron
+				trade_goods = copper
+			}		
+		}			
+		modifier = {
+			factor = 2.0
+			is_capital = yes
+		}
+		modifier = {
+			factor = 0.25
+			is_overseas = yes
+		}
+	}
+}
+
+arsenal = {
+	previous = regimental_camp
+	cost = 250
+	time = 24
+	modifier = {
+		regiment_recruit_speed = -0.3
+		local_manpower_modifier = 0.25
+	}
+	destroy_on_conquest = yes
+	
+	monarch_power = MIL
+	
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 0.33
+			NOT = {
+				trade_goods = iron
+				trade_goods = copper
+			}		
+		}			
+		modifier = {
+			factor = 2.0
+			is_capital = yes
+		}
+		modifier = {
+			factor = 0.25
+			is_overseas = yes
+		}
+	}	
+}
+
+conscription_center = {
+	previous = arsenal
+	cost = 500
+	time = 24
+	modifier = {
+		local_manpower_modifier = 0.25
+		land_forcelimit = 2
+	}
+	destroy_on_conquest = yes
+	category = 2
+	
+	monarch_power = MIL
+	
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 0.33
+			NOT = {
+				trade_goods = iron
+				trade_goods = copper
+			}		
+		}		
+		modifier = {
+			factor = 2.0
+			is_capital = yes
+		}
+		modifier = {
+			factor = 0.25
+			is_overseas = yes
+		}
+	}
+}
+
+# Naval
+dock = {
+	cost = 50
+	time = 12
+	trigger = {
+		has_port = yes
+	}
+	modifier = {
+		local_ship_repair = 0.25
+		province_trade_power_value = 0.33
+	}
+	destroy_on_conquest = yes
+	spare_on_core = yes
+ 	category = 3
+	
+	monarch_power = DIP
+	
+	ai_will_do = {
+		factor = 100	
+		modifier = {
+			factor = 2.0
+			is_capital = yes
+		}
+		modifier = {
+			factor = 2.0
+			is_overseas = no
+		}		
+		modifier = {
+			factor = 1.5
+			owner = {
+				num_of_colonists = 1
+			}
+		}
+		modifier = {
+			factor = 0.25
+			is_overseas = yes
+		}		
+	}
+}
+
+drydock = {
+ 	previous = dock
+	cost = 75
+	time = 12
+	trigger = {
+		has_port = yes
+	}
+	modifier = {
+		ship_recruit_speed = -0.1
+		local_ship_repair = 0.10
+	}
+	destroy_on_conquest = yes
+ 	spare_on_core = yes
+	
+	monarch_power = DIP
+	
+	ai_will_do = {
+		factor = 100	
+		modifier = {
+			factor = 2.0
+			is_capital = yes
+		}
+		modifier = {
+			factor = 2.0
+			is_overseas = no
+		}		
+		modifier = {
+			factor = 1.5
+			owner = {
+				num_of_colonists = 1
+			}
+		}
+		modifier = {
+			factor = 0.25
+			is_overseas = yes
+		}			
+	}
+}
+
+shipyard = {
+	previous = drydock
+	cost = 100
+	time = 12
+	trigger = {
+		has_port = yes
+	}
+	modifier = {
+		naval_forcelimit = 1
+	}
+	destroy_on_conquest = yes
+	spare_on_core = yes
+	
+	monarch_power = DIP
+	
+	ai_will_do = {
+		factor = 100	
+		modifier = {
+			factor = 2.0
+			is_capital = yes
+		}
+		modifier = {
+			factor = 1.5
+			is_overseas = no
+		}		
+		modifier = {
+			factor = 1.5
+			owner = {
+				num_of_colonists = 1
+			}
+		}
+		modifier = {
+			factor = 0.25
+			is_overseas = yes
+		}		
+	}
+}
+
+grand_shipyard = {
+ 	previous = shipyard
+	cost = 150
+	time = 12
+	trigger = {
+		has_port = yes
+	}
+	modifier = {
+		local_ship_cost = -0.10
+		ship_recruit_speed = -0.10
+	}
+	destroy_on_conquest = yes
+	spare_on_core = yes
+	
+	monarch_power = DIP
+	
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 0.33
+			NOT = {
+				trade_goods = naval_supplies
+				trade_goods = fish
+			}		
+		}		
+		modifier = {
+			factor = 2.0
+			is_capital = yes
+		}
+		modifier = {
+			factor = 1.5
+			is_overseas = no
+		}		
+		modifier = {
+			factor = 1.5
+			owner = {
+				num_of_colonists = 1
+			}
+		}
+		modifier = {
+			factor = 0.25
+			is_overseas = yes
+		}		
+	}
+}
+
+naval_arsenal = {
+ 	previous = grand_shipyard
+	cost = 250
+	time = 24
+	trigger = {
+		has_port = yes
+	}
+	modifier = {
+		ship_recruit_speed = -0.1
+		naval_forcelimit = 2
+	}
+	destroy_on_conquest = yes
+	
+	monarch_power = DIP
+	
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 0.33
+			NOT = {
+				trade_goods = naval_supplies
+				trade_goods = fish
+			}		
+		}		
+		modifier = {
+			factor = 2.0
+			is_capital = yes
+		}
+		modifier = {
+			factor = 1.5
+			is_overseas = no
+		}		
+		modifier = {
+			factor = 1.5
+			owner = {
+				num_of_colonists = 1
+			}
+		}
+		modifier = {
+			factor = 0.25
+			is_overseas = yes
+		}		
+	}
+}
+
+naval_base = {
+ 	previous = naval_arsenal
+	cost = 500
+	time = 24
+	trigger = {
+		has_port = yes
+	}
+	modifier = {
+		local_ship_repair = 0.50
+		ship_recruit_speed = -0.1
+		naval_forcelimit = 2
+	}
+	destroy_on_conquest = yes
+	category = 3
+	
+	monarch_power = DIP
+	
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 0.33
+			NOT = {
+				trade_goods = naval_supplies
+				trade_goods = fish
+			}		
+		}			
+		modifier = {
+			factor = 2.0
+			is_capital = yes
+		}
+		modifier = {
+			factor = 1.5
+			is_overseas = no
+		}		
+		modifier = {
+			factor = 1.5
+			owner = {
+				num_of_colonists = 1
+			}
+		}
+		modifier = {
+			factor = 0.25
+			is_overseas = yes
+		}	
+	}
+}
+
+# Production
+constable = {
+	
+	cost = 50
+	time = 12
+	modifier = {
+		local_tax_modifier = 0.20
+	}
+	destroy_on_conquest = yes
+	spare_on_core = yes
+	category = 5
+	
+	monarch_power = ADM
+	
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 2.0
+			is_overseas = no
+		}		
+		modifier = {
+			factor = 2.0
+			is_capital = yes
+		}
+		modifier = {
+			factor = 0.5
+			is_overseas = yes
+		}			
+		modifier = {
+			factor = 0.75
+			NOT = { base_tax = 2 }
+		}	
+		modifier = {
+			factor = 0.75
+			NOT = { base_tax = 4 }
+		}		
+		modifier = {
+			factor = 2.0
+			base_tax = 6
+		}
+		modifier = {
+			factor = 2.0
+			base_tax = 8
+		}	
+		modifier = {
+			factor = 2.0
+			base_tax = 10
+		}				
+	}
+}
+
+workshop = {
+	previous = constable
+	cost = 75
+	time = 12
+	modifier = {
+		trade_goods_size = 0.20
+	}
+	destroy_on_conquest = yes
+	spare_on_core = yes
+	
+	monarch_power = ADM
+	
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 2.0
+			is_overseas = no
+		}	
+		modifier = {
+			factor = 2.0
+			is_capital = yes
+		}
+		modifier = {
+			factor = 0.5
+			is_overseas = yes
+		}			
+		modifier = {
+			factor = 0.75
+			NOT = { base_tax = 2 }
+		}	
+		modifier = {
+			factor = 0.75
+			NOT = { base_tax = 4 }
+		}		
+		modifier = {
+			factor = 2.0
+			base_tax = 6
+		}
+		modifier = {
+			factor = 2.0
+			base_tax = 8
+		}	
+		modifier = {
+			factor = 2.0
+			base_tax = 10
+		}				
+	}
+}
+
+counting_house = {
+	previous = workshop
+	cost = 100
+	time = 12
+	modifier = {
+		local_production_efficiency = 0.25
+	}
+	destroy_on_conquest = yes
+	spare_on_core = yes
+	
+	monarch_power = ADM
+	
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 2.0
+			is_capital = yes
+		}
+		modifier = {
+			factor = 1.5
+			is_overseas = no
+		}			
+		modifier = {
+			factor = 0.5
+			is_overseas = yes
+		}			
+		modifier = {
+			factor = 0.75
+			NOT = { base_tax = 2 }
+		}	
+		modifier = {
+			factor = 0.75
+			NOT = { base_tax = 4 }
+		}		
+		modifier = {
+			factor = 2.0
+			base_tax = 6
+		}
+		modifier = {
+			factor = 2.0
+			base_tax = 8
+		}	
+		modifier = {
+			factor = 2.0
+			base_tax = 10
+		}				
+	}
+}
+
+treasury_office = {
+	previous = counting_house
+	cost = 150
+	time = 12
+	modifier = {
+		local_tax_modifier = 0.20
+		trade_goods_size = 0.10
+	}
+	destroy_on_conquest = yes
+	spare_on_core = yes
+	
+	monarch_power = ADM
+	
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 2.0
+			is_capital = yes
+		}
+		modifier = {
+			factor = 1.5
+			is_overseas = no
+		}		
+		modifier = {
+			factor = 0.5
+			is_overseas = yes
+		}			
+		modifier = {
+			factor = 0.75
+			NOT = { base_tax = 2 }
+		}	
+		modifier = {
+			factor = 0.75
+			NOT = { base_tax = 4 }
+		}		
+		modifier = {
+			factor = 2.0
+			base_tax = 6
+		}
+		modifier = {
+			factor = 2.0
+			base_tax = 8
+		}	
+		modifier = {
+			factor = 2.0
+			base_tax = 10
+		}			
+	}
+}
+
+mint = {
+	previous = treasury_office
+	cost = 250
+	time = 24
+	modifier = {
+		local_tax_modifier = 0.5
+	}
+	destroy_on_conquest = yes
+	
+	monarch_power = ADM
+	
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 2.0
+			is_capital = yes
+		}
+		modifier = {
+			factor = 0.5
+			is_overseas = yes
+		}			
+		modifier = {
+			factor = 0.75
+			NOT = { base_tax = 2 }
+		}	
+		modifier = {
+			factor = 0.75
+			NOT = { base_tax = 4 }
+		}		
+		modifier = {
+			factor = 2.0
+			base_tax = 6
+		}
+		modifier = {
+			factor = 2.0
+			base_tax = 8
+		}	
+		modifier = {
+			factor = 2.0
+			base_tax = 10
+		}			
+	}
+}
+
+stock_exchange = {
+	previous = mint
+	cost = 500
+	time = 24
+	modifier = {
+		tax_income = 5	#increase tax with 5$
+	}
+	destroy_on_conquest = yes
+	
+	monarch_power = ADM
+	
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 2.0
+			is_capital = yes
+		}
+		modifier = {
+			factor = 0.5
+			is_overseas = yes
+		}			
+		modifier = {
+			factor = 0.75
+			NOT = { base_tax = 2 }
+		}	
+		modifier = {
+			factor = 0.75
+			NOT = { base_tax = 4 }
+		}		
+		modifier = {
+			factor = 2.0
+			base_tax = 6
+		}
+		modifier = {
+			factor = 2.0
+			base_tax = 8
+		}	
+		modifier = {
+			factor = 2.0
+			base_tax = 10
+		}		
+	}
+}
+
+# Trade
+marketplace = {
+	cost = 50
+	time = 12
+	modifier = {
+		province_trade_power_value = 1.0
+	}
+	destroy_on_conquest = yes
+	spare_on_core = yes
+	category = 6
+	
+	monarch_power = DIP
+	
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 2.0
+			is_overseas = no
+		}
+		modifier = {
+			factor = 2.0
+			is_capital = yes
+		}	
+		modifier = {
+			factor = 1.5
+			has_port = yes
+		}		
+		modifier = {
+			factor = 3.0
+			OR = {
+				has_province_modifier = center_of_trade_modifier
+				has_province_modifier = the_staple_port
+				has_province_modifier = free_shipping_through_the_sound
+				has_province_modifier = bosphorous_sound_toll
+				has_province_modifier = sound_toll
+				has_province_modifier = port_to_the_new_world
+				has_province_modifier = neva_estuary_modifier
+				has_province_modifier = daugava_estuary_modifier
+				has_province_modifier = neman_estuary_modifier
+				has_province_modifier = vistula_estuary_modifier
+				has_province_modifier = oder_estuary_modifier
+				has_province_modifier = elbe_estuary_modifier
+				has_province_modifier = weser_estuary_modifier
+				has_province_modifier = ems_estuary_modifier
+				has_province_modifier = rhine_estuary_modifier
+				has_province_modifier = thames_estuary_modifier
+				has_province_modifier = rhone_estuary_modifier
+				has_province_modifier = gironde_estuary_modifier
+				has_province_modifier = loire_estuary_modifier
+				has_province_modifier = seine_estuary_modifier
+				has_province_modifier = ebro_estuary_modifier
+				has_province_modifier = douro_estuary_modifier
+				has_province_modifier = tagus_estuary_modifier
+				has_province_modifier = guadiana_estuary_modifier
+				has_province_modifier = po_estuary_modifier
+				has_province_modifier = danube_estuary_modifier
+				has_province_modifier = dnestr_estuary_modifier 
+				has_province_modifier = dnieper_estuary_modifier
+				has_province_modifier = volga_estuary_modifier
+				has_province_modifier = don_estuary_modifier 
+				has_province_modifier = yangtze_estuary_modifier
+				has_province_modifier = huang_he_estuary_modifier
+				has_province_modifier = ganges_estuary_modifier
+				has_province_modifier = indus_estuary_modifier
+				has_province_modifier = euphrates_estuary_modifier
+				has_province_modifier = nile_estuary_modifier
+				has_province_modifier = gambia_estuary_modifier
+				has_province_modifier = pearl_estuary_modifier
+				has_province_modifier = parana_estuary_modifier
+				has_province_modifier = mekong_estuary_modifier
+				has_province_modifier = mississippi_estuary_modifier
+				has_province_modifier = rio_grande_estuary_modifier 
+				has_province_modifier = niger_estuary_modifier
+			}
+		}		
+		modifier = {
+			factor = 0.5
+			is_overseas = yes
+		}		
+	}
+}
+
+trade_depot = {
+	previous = marketplace
+	cost = 75
+	time = 12
+	modifier = {
+		trade_value = 1
+		province_trade_power_modifier = 0.25
+	}
+	destroy_on_conquest = yes
+	spare_on_core = yes
+	
+	monarch_power = DIP
+	
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 2.0
+			is_overseas = no
+		}	
+		modifier = {
+			factor = 2.0
+			is_capital = yes
+		}
+		modifier = {
+			factor = 1.5
+			has_port = yes
+		}		
+		modifier = {
+			factor = 3.0
+			OR = {
+				has_province_modifier = center_of_trade_modifier
+				has_province_modifier = the_staple_port
+				has_province_modifier = free_shipping_through_the_sound
+				has_province_modifier = bosphorous_sound_toll
+				has_province_modifier = sound_toll
+				has_province_modifier = port_to_the_new_world
+				has_province_modifier = neva_estuary_modifier
+				has_province_modifier = daugava_estuary_modifier
+				has_province_modifier = neman_estuary_modifier
+				has_province_modifier = vistula_estuary_modifier
+				has_province_modifier = oder_estuary_modifier
+				has_province_modifier = elbe_estuary_modifier
+				has_province_modifier = weser_estuary_modifier
+				has_province_modifier = ems_estuary_modifier
+				has_province_modifier = rhine_estuary_modifier
+				has_province_modifier = thames_estuary_modifier
+				has_province_modifier = rhone_estuary_modifier
+				has_province_modifier = gironde_estuary_modifier
+				has_province_modifier = loire_estuary_modifier
+				has_province_modifier = seine_estuary_modifier
+				has_province_modifier = ebro_estuary_modifier
+				has_province_modifier = douro_estuary_modifier
+				has_province_modifier = tagus_estuary_modifier
+				has_province_modifier = guadiana_estuary_modifier
+				has_province_modifier = po_estuary_modifier
+				has_province_modifier = danube_estuary_modifier
+				has_province_modifier = dnestr_estuary_modifier 
+				has_province_modifier = dnieper_estuary_modifier
+				has_province_modifier = volga_estuary_modifier
+				has_province_modifier = don_estuary_modifier 
+				has_province_modifier = yangtze_estuary_modifier
+				has_province_modifier = huang_he_estuary_modifier
+				has_province_modifier = ganges_estuary_modifier
+				has_province_modifier = indus_estuary_modifier
+				has_province_modifier = euphrates_estuary_modifier
+				has_province_modifier = nile_estuary_modifier
+				has_province_modifier = gambia_estuary_modifier
+				has_province_modifier = pearl_estuary_modifier
+				has_province_modifier = parana_estuary_modifier
+				has_province_modifier = mekong_estuary_modifier
+				has_province_modifier = mississippi_estuary_modifier
+				has_province_modifier = rio_grande_estuary_modifier 
+				has_province_modifier = niger_estuary_modifier
+			}
+		}	
+		modifier = {
+			factor = 0.5
+			is_overseas = yes
+		}		
+	}
+}
+
+canal = {
+	previous = trade_depot
+	cost = 100
+	time = 12
+	modifier = {
+		trade_value_modifier = 0.25
+		province_trade_power_value = 1.0
+	}
+	destroy_on_conquest = yes
+	spare_on_core = yes
+	
+	monarch_power = DIP
+	
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 1.5
+			is_overseas = no
+		}		
+		modifier = {
+			factor = 2.0
+			is_capital = yes
+		}
+		modifier = {
+			factor = 1.5
+			has_port = yes
+		}		
+		modifier = {
+			factor = 3.0
+			OR = {
+				has_province_modifier = center_of_trade_modifier
+				has_province_modifier = the_staple_port
+				has_province_modifier = free_shipping_through_the_sound
+				has_province_modifier = bosphorous_sound_toll
+				has_province_modifier = sound_toll
+				has_province_modifier = port_to_the_new_world
+				has_province_modifier = neva_estuary_modifier
+				has_province_modifier = daugava_estuary_modifier
+				has_province_modifier = neman_estuary_modifier
+				has_province_modifier = vistula_estuary_modifier
+				has_province_modifier = oder_estuary_modifier
+				has_province_modifier = elbe_estuary_modifier
+				has_province_modifier = weser_estuary_modifier
+				has_province_modifier = ems_estuary_modifier
+				has_province_modifier = rhine_estuary_modifier
+				has_province_modifier = thames_estuary_modifier
+				has_province_modifier = rhone_estuary_modifier
+				has_province_modifier = gironde_estuary_modifier
+				has_province_modifier = loire_estuary_modifier
+				has_province_modifier = seine_estuary_modifier
+				has_province_modifier = ebro_estuary_modifier
+				has_province_modifier = douro_estuary_modifier
+				has_province_modifier = tagus_estuary_modifier
+				has_province_modifier = guadiana_estuary_modifier
+				has_province_modifier = po_estuary_modifier
+				has_province_modifier = danube_estuary_modifier
+				has_province_modifier = dnestr_estuary_modifier 
+				has_province_modifier = dnieper_estuary_modifier
+				has_province_modifier = volga_estuary_modifier
+				has_province_modifier = don_estuary_modifier 
+				has_province_modifier = yangtze_estuary_modifier
+				has_province_modifier = huang_he_estuary_modifier
+				has_province_modifier = ganges_estuary_modifier
+				has_province_modifier = indus_estuary_modifier
+				has_province_modifier = euphrates_estuary_modifier
+				has_province_modifier = nile_estuary_modifier
+				has_province_modifier = gambia_estuary_modifier
+				has_province_modifier = pearl_estuary_modifier
+				has_province_modifier = parana_estuary_modifier
+				has_province_modifier = mekong_estuary_modifier
+				has_province_modifier = mississippi_estuary_modifier
+				has_province_modifier = rio_grande_estuary_modifier 
+				has_province_modifier = niger_estuary_modifier
+			}
+		}	
+		modifier = {
+			factor = 0.5
+			is_overseas = yes
+		}		
+	}
+}
+
+road_network = {
+	previous = canal
+	cost = 150
+	time = 12
+	modifier = {
+		province_trade_power_modifier = 0.25
+		local_movement_speed = 0.1
+	}
+	destroy_on_conquest = yes
+	spare_on_core = yes
+	
+	monarch_power = DIP
+	
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 1.5
+			is_overseas = no
+		}			
+		modifier = {
+			factor = 2.0
+			is_capital = yes
+		}
+		modifier = {
+			factor = 1.5
+			has_port = yes
+		}		
+		modifier = {
+			factor = 3.0
+			OR = {
+				has_province_modifier = center_of_trade_modifier
+				has_province_modifier = the_staple_port
+				has_province_modifier = free_shipping_through_the_sound
+				has_province_modifier = bosphorous_sound_toll
+				has_province_modifier = sound_toll
+				has_province_modifier = port_to_the_new_world
+				has_province_modifier = neva_estuary_modifier
+				has_province_modifier = daugava_estuary_modifier
+				has_province_modifier = neman_estuary_modifier
+				has_province_modifier = vistula_estuary_modifier
+				has_province_modifier = oder_estuary_modifier
+				has_province_modifier = elbe_estuary_modifier
+				has_province_modifier = weser_estuary_modifier
+				has_province_modifier = ems_estuary_modifier
+				has_province_modifier = rhine_estuary_modifier
+				has_province_modifier = thames_estuary_modifier
+				has_province_modifier = rhone_estuary_modifier
+				has_province_modifier = gironde_estuary_modifier
+				has_province_modifier = loire_estuary_modifier
+				has_province_modifier = seine_estuary_modifier
+				has_province_modifier = ebro_estuary_modifier
+				has_province_modifier = douro_estuary_modifier
+				has_province_modifier = tagus_estuary_modifier
+				has_province_modifier = guadiana_estuary_modifier
+				has_province_modifier = po_estuary_modifier
+				has_province_modifier = danube_estuary_modifier
+				has_province_modifier = dnestr_estuary_modifier 
+				has_province_modifier = dnieper_estuary_modifier
+				has_province_modifier = volga_estuary_modifier
+				has_province_modifier = don_estuary_modifier 
+				has_province_modifier = yangtze_estuary_modifier
+				has_province_modifier = huang_he_estuary_modifier
+				has_province_modifier = ganges_estuary_modifier
+				has_province_modifier = indus_estuary_modifier
+				has_province_modifier = euphrates_estuary_modifier
+				has_province_modifier = nile_estuary_modifier
+				has_province_modifier = gambia_estuary_modifier
+				has_province_modifier = pearl_estuary_modifier
+				has_province_modifier = parana_estuary_modifier
+				has_province_modifier = mekong_estuary_modifier
+				has_province_modifier = mississippi_estuary_modifier
+				has_province_modifier = rio_grande_estuary_modifier 
+				has_province_modifier = niger_estuary_modifier
+			}
+		}	
+		modifier = {
+			factor = 0.5
+			is_overseas = yes
+		}	
+	}
+}
+
+post_office = {
+	previous = road_network
+	cost = 250
+	time = 24
+	modifier = {
+		province_trade_power_value = 3.0
+		province_trade_power_modifier = 0.50
+	}
+	destroy_on_conquest = yes
+	
+	monarch_power = DIP
+	
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 2.0
+			is_capital = yes
+		}
+		modifier = {
+			factor = 1.5
+			has_port = yes
+		}		
+		modifier = {
+			factor = 3.0
+			OR = {
+				has_province_modifier = center_of_trade_modifier
+				has_province_modifier = the_staple_port
+				has_province_modifier = free_shipping_through_the_sound
+				has_province_modifier = bosphorous_sound_toll
+				has_province_modifier = sound_toll
+				has_province_modifier = port_to_the_new_world
+				has_province_modifier = neva_estuary_modifier
+				has_province_modifier = daugava_estuary_modifier
+				has_province_modifier = neman_estuary_modifier
+				has_province_modifier = vistula_estuary_modifier
+				has_province_modifier = oder_estuary_modifier
+				has_province_modifier = elbe_estuary_modifier
+				has_province_modifier = weser_estuary_modifier
+				has_province_modifier = ems_estuary_modifier
+				has_province_modifier = rhine_estuary_modifier
+				has_province_modifier = thames_estuary_modifier
+				has_province_modifier = rhone_estuary_modifier
+				has_province_modifier = gironde_estuary_modifier
+				has_province_modifier = loire_estuary_modifier
+				has_province_modifier = seine_estuary_modifier
+				has_province_modifier = ebro_estuary_modifier
+				has_province_modifier = douro_estuary_modifier
+				has_province_modifier = tagus_estuary_modifier
+				has_province_modifier = guadiana_estuary_modifier
+				has_province_modifier = po_estuary_modifier
+				has_province_modifier = danube_estuary_modifier
+				has_province_modifier = dnestr_estuary_modifier 
+				has_province_modifier = dnieper_estuary_modifier
+				has_province_modifier = volga_estuary_modifier
+				has_province_modifier = don_estuary_modifier 
+				has_province_modifier = yangtze_estuary_modifier
+				has_province_modifier = huang_he_estuary_modifier
+				has_province_modifier = ganges_estuary_modifier
+				has_province_modifier = indus_estuary_modifier
+				has_province_modifier = euphrates_estuary_modifier
+				has_province_modifier = nile_estuary_modifier
+				has_province_modifier = gambia_estuary_modifier
+				has_province_modifier = pearl_estuary_modifier
+				has_province_modifier = parana_estuary_modifier
+				has_province_modifier = mekong_estuary_modifier
+				has_province_modifier = mississippi_estuary_modifier
+				has_province_modifier = rio_grande_estuary_modifier 
+				has_province_modifier = niger_estuary_modifier
+			}
+		}
+		modifier = {
+			factor = 0.5
+			is_overseas = yes
+		}		
+	}
+}
+
+customs_house = {
+	previous = post_office
+	cost = 500
+	time = 24
+	modifier = {
+		province_trade_power_value = 5.0
+	}
+	destroy_on_conquest = yes
+	
+	monarch_power = DIP
+	
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 2.0
+			is_capital = yes
+		}
+		modifier = {
+			factor = 1.5
+			has_port = yes
+		}		
+		modifier = {
+			factor = 3.0
+			OR = {
+				has_province_modifier = center_of_trade_modifier
+				has_province_modifier = the_staple_port
+				has_province_modifier = free_shipping_through_the_sound
+				has_province_modifier = bosphorous_sound_toll
+				has_province_modifier = sound_toll
+				has_province_modifier = port_to_the_new_world
+				has_province_modifier = neva_estuary_modifier
+				has_province_modifier = daugava_estuary_modifier
+				has_province_modifier = neman_estuary_modifier
+				has_province_modifier = vistula_estuary_modifier
+				has_province_modifier = oder_estuary_modifier
+				has_province_modifier = elbe_estuary_modifier
+				has_province_modifier = weser_estuary_modifier
+				has_province_modifier = ems_estuary_modifier
+				has_province_modifier = rhine_estuary_modifier
+				has_province_modifier = thames_estuary_modifier
+				has_province_modifier = rhone_estuary_modifier
+				has_province_modifier = gironde_estuary_modifier
+				has_province_modifier = loire_estuary_modifier
+				has_province_modifier = seine_estuary_modifier
+				has_province_modifier = ebro_estuary_modifier
+				has_province_modifier = douro_estuary_modifier
+				has_province_modifier = tagus_estuary_modifier
+				has_province_modifier = guadiana_estuary_modifier
+				has_province_modifier = po_estuary_modifier
+				has_province_modifier = danube_estuary_modifier
+				has_province_modifier = dnestr_estuary_modifier 
+				has_province_modifier = dnieper_estuary_modifier
+				has_province_modifier = volga_estuary_modifier
+				has_province_modifier = don_estuary_modifier 
+				has_province_modifier = yangtze_estuary_modifier
+				has_province_modifier = huang_he_estuary_modifier
+				has_province_modifier = ganges_estuary_modifier
+				has_province_modifier = indus_estuary_modifier
+				has_province_modifier = euphrates_estuary_modifier
+				has_province_modifier = nile_estuary_modifier
+				has_province_modifier = gambia_estuary_modifier
+				has_province_modifier = pearl_estuary_modifier
+				has_province_modifier = parana_estuary_modifier
+				has_province_modifier = mekong_estuary_modifier
+				has_province_modifier = mississippi_estuary_modifier
+				has_province_modifier = rio_grande_estuary_modifier 
+				has_province_modifier = niger_estuary_modifier
+			}
+		}
+		modifier = {
+			factor = 0.5
+			is_overseas = yes
+		}	
+	}
+}
+
+# Fortresses
+fort1 = {
+	cost = 50
+	time = 12
+	modifier = {
+		fort_level = 1
+		local_missionary_strength = 0.001
+		supply_limit = 0.5
+	}
+	destroy_on_conquest = no
+	category = 4
+	
+	monarch_power = MIL
+	
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 2.0
+			is_overseas = no
+		}		
+		modifier = {
+			factor = 2.0
+			is_capital = yes
+		}
+		modifier = {
+			factor = 0.75
+			NOT = {
+				any_neighbor_province = {
+					NOT = { owned_by = ROOT }
+				}
+			}
+		}			
+		modifier = {
+			factor = 1.25
+			any_neighbor_province = {
+				NOT = { owned_by = ROOT }
+			}
+		}	
+		modifier = {
+			factor = 0.25
+			is_overseas = yes
+		}		
+	}
+}
+
+fort2 = {
+	previous = fort1
+	cost = 75
+	time = 12
+	modifier = {
+		fort_level = 1
+		local_missionary_strength = 0.001
+		supply_limit = 0.5
+	}
+	destroy_on_conquest = no
+	
+	monarch_power = MIL
+	
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 1.5
+			is_overseas = no
+		}			
+		modifier = {
+			factor = 2.0
+			is_capital = yes
+		}
+		modifier = {
+			factor = 0.75
+			NOT = {
+				any_neighbor_province = {
+					NOT = { owned_by = ROOT }
+				}
+			}
+		}			
+		modifier = {
+			factor = 1.25
+			any_neighbor_province = {
+				NOT = { owned_by = ROOT }
+			}
+		}	
+		modifier = {
+			factor = 0.25
+			is_overseas = yes
+		}			
+	}
+}
+
+fort3 = {
+	previous = fort2
+	cost = 100
+	time = 12
+	modifier = {
+		fort_level = 1
+		local_missionary_strength = 0.001
+		supply_limit = 0.5
+	}
+	destroy_on_conquest = no
+	
+	monarch_power = MIL
+	
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 1.25
+			is_overseas = no
+		}			
+		modifier = {
+			factor = 2.0
+			is_capital = yes
+		}
+		modifier = {
+			factor = 0.75
+			NOT = {
+				any_neighbor_province = {
+					NOT = { owned_by = ROOT }
+				}
+			}
+		}			
+		modifier = {
+			factor = 1.25
+			any_neighbor_province = {
+				NOT = { owned_by = ROOT }
+			}
+		}	
+		modifier = {
+			factor = 0.25
+			is_overseas = yes
+		}			
+	}
+}
+
+fort4 = {
+	previous = fort3
+	cost = 150
+	time = 12
+	modifier = {
+		fort_level = 1
+		local_missionary_strength = 0.001
+		supply_limit = 0.5
+	}
+	destroy_on_conquest = no
+	
+	monarch_power = MIL
+	
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 0.75
+			always = yes
+		}		
+		modifier = {
+			factor = 2.0
+			is_capital = yes
+		}
+		modifier = {
+			factor = 0.75
+			NOT = {
+				any_neighbor_province = {
+					NOT = { owned_by = ROOT }
+				}
+			}
+		}			
+		modifier = {
+			factor = 1.25
+			any_neighbor_province = {
+				NOT = { owned_by = ROOT }
+			}
+		}		
+		modifier = {
+			factor = 0.25
+			is_overseas = yes
+		}			
+	}
+}
+
+fort5 = {
+	previous = fort4
+	cost = 250
+	time = 24
+	modifier = {
+		fort_level = 2
+		local_defensiveness = 0.1
+		local_missionary_strength = 0.001
+	}
+	destroy_on_conquest = yes
+	
+	monarch_power = MIL
+	
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 0.5
+			always = yes
+		}			
+		modifier = {
+			factor = 2.0
+			is_capital = yes
+		}
+		modifier = {
+			factor = 0.75
+			NOT = {
+				any_neighbor_province = {
+					NOT = { owned_by = ROOT }
+				}
+			}
+		}			
+		modifier = {
+			factor = 1.25
+			any_neighbor_province = {
+				NOT = { owned_by = ROOT }
+			}
+		}	
+		modifier = {
+			factor = 0.25
+			is_overseas = yes
+		}			
+	}
+}
+
+fort6 = {
+	previous = fort5
+	cost = 500
+	time = 24
+	modifier = {
+		fort_level = 2
+		local_defensiveness = 0.1
+		local_missionary_strength = 0.001
+	}
+	destroy_on_conquest = yes
+	
+	monarch_power = MIL
+	
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 0.5
+			always = yes
+		}			
+		modifier = {
+			factor = 2.0
+			is_capital = yes
+		}
+		modifier = {
+			factor = 0.75
+			NOT = {
+				any_neighbor_province = {
+					NOT = { owned_by = ROOT }
+				}
+			}
+		}			
+		modifier = {
+			factor = 1.25
+			any_neighbor_province = {
+				NOT = { owned_by = ROOT }
+			}
+		}	
+		modifier = {
+			factor = 0.25
+			is_overseas = yes
+		}			
+	}
+}
+
+# One per country
+tax_assessor = {
+	cost = 1000
+	time = 12
+	trigger = {
+		OR = {
+			is_capital = yes
+			base_tax = 10
+		}
+	}
+	modifier = {
+		inflation_reduction = 0.05
+	}
+	destroy_on_conquest = yes
+	one_per_country = yes
+	category = 8
+	
+	monarch_power = ADM
+	
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 0
+			owner = { NOT = { monthly_income = 25 } }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { NOT = { monthly_income = 50 } }
+		}
+		modifier = {
+			factor = 1.25
+			owner = { monthly_income = 75 }
+		}		
+		modifier = {
+			factor = 1.25
+			owner = { monthly_income = 100 }
+		}	
+		modifier = {
+			factor = 0.25
+			is_overseas = yes
+		}	
+		modifier = {
+			factor = 0
+			is_capital = yes
+		}			
+	}
+}
+
+embassy = {
+	cost = 1000
+	time = 12
+	trigger = {
+	}
+	modifier = {
+		diplomats = 1
+		enemy_core_creation = 0.1
+	}
+	destroy_on_conquest = yes
+	one_per_country = yes
+	category = 8
+	
+	monarch_power = DIP
+	
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 0
+			owner = { NOT = { monthly_income = 25 } }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { NOT = { monthly_income = 50 } }
+		}
+		modifier = {
+			factor = 1.25
+			owner = { monthly_income = 75 }
+		}		
+		modifier = {
+			factor = 1.25
+			owner = { monthly_income = 100 }
+		}	
+		modifier = {
+			factor = 0.25
+			is_overseas = yes
+		}	
+		modifier = {
+			factor = 0
+			is_capital = yes
+		}			
+	}
+}
+
+glorious_monument = {
+	cost = 1000
+	time = 12
+	modifier = {
+		prestige = 1
+	}
+	destroy_on_conquest = yes
+	one_per_country = yes
+	category = 8
+	
+	monarch_power = ADM
+	
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 0
+			owner = { NOT = { monthly_income = 25 } }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { NOT = { monthly_income = 50 } }
+		}
+		modifier = {
+			factor = 1.25
+			owner = { monthly_income = 75 }
+		}		
+		modifier = {
+			factor = 1.25
+			owner = { monthly_income = 100 }
+		}			
+		modifier = {
+			factor = 0.25
+			is_overseas = yes
+		}	
+		modifier = {
+			factor = 0
+			is_capital = yes
+		}			
+	}
+}
+
+march = {
+	cost = 500
+	time = 12
+	trigger = {
+		is_core = FROM
+		any_neighbor_province = {
+			NOT = { owned_by = FROM }
+		}		
+	}
+	modifier = {
+		local_defensiveness = 2.0
+		local_manpower = 0.5
+	}
+	destroy_on_conquest = yes
+	one_per_country = yes
+	category = 8
+	
+	monarch_power = MIL
+	
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 0
+			owner = { NOT = { monthly_income = 25 } }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { NOT = { monthly_income = 50 } }
+		}
+		modifier = {
+			factor = 1.25
+			owner = { monthly_income = 75 }
+		}		
+		modifier = {
+			factor = 1.25
+			owner = { monthly_income = 100 }
+		}				
+		modifier = {
+			factor = 0.25
+			is_overseas = yes
+		}	
+		modifier = {
+			factor = 0
+			is_capital = yes
+		}				
+	}
+}
+
+grain_depot = {
+	cost = 1000
+	time = 12
+	trigger = {
+		is_core = FROM
+		trade_goods = grain
+	}
+	modifier = {
+		land_forcelimit_modifier = 0.10
+		land_maintenance_modifier = -0.10
+	}
+	destroy_on_conquest = yes
+	one_per_country = yes
+	category = 8
+	
+	monarch_power = ADM
+	
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 0
+			owner = { NOT = { monthly_income = 25 } }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { NOT = { monthly_income = 50 } }
+		}
+		modifier = {
+			factor = 1.25
+			owner = { monthly_income = 75 }
+		}		
+		modifier = {
+			factor = 1.25
+			owner = { monthly_income = 100 }
+		}			
+		modifier = {
+			factor = 0.25
+			is_overseas = yes
+		}	
+		modifier = {
+			factor = 0
+			is_capital = yes
+		}				
+	}
+}
+
+royal_palace = {
+	cost = 1000
+	time = 12
+	trigger = {
+		owner = { government = monarchy }
+		is_capital = yes
+	}
+	modifier = {
+		legitimacy = 0.10
+	}
+	destroy_on_conquest = yes
+	one_per_country = yes
+	category = 8
+	
+	monarch_power = DIP
+	
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 0
+			owner = { NOT = { monthly_income = 25 } }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { NOT = { monthly_income = 50 } }
+		}
+		modifier = {
+			factor = 1.25
+			owner = { monthly_income = 75 }
+		}		
+		modifier = {
+			factor = 1.25
+			owner = { monthly_income = 100 }
+		}				
+	}
+}
+
+war_college = {
+	cost = 1000
+	time = 12
+	modifier = {
+		army_tradition = 0.5
+		free_leader_pool = 1
+	}
+	destroy_on_conquest = yes
+	one_per_country = yes
+	category = 8
+	
+	monarch_power = MIL
+	
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 0
+			owner = { NOT = { monthly_income = 25 } }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { NOT = { monthly_income = 50 } }
+		}
+		modifier = {
+			factor = 1.25
+			owner = { monthly_income = 75 }
+		}		
+		modifier = {
+			factor = 1.25
+			owner = { monthly_income = 100 }
+		}			
+		modifier = {
+			factor = 0.25
+			is_overseas = yes
+		}	
+		modifier = {
+			factor = 0
+			is_capital = yes
+		}		
+	}
+}
+
+admiralty = {
+	cost = 1000
+	time = 12
+	trigger = {
+		has_port = yes
+	}
+	modifier = {
+		navy_tradition = 0.5
+		free_leader_pool = 1
+	}
+	destroy_on_conquest = yes
+	one_per_country = yes
+	category = 8
+	
+	monarch_power = DIP
+	
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 0
+			owner = { NOT = { monthly_income = 25 } }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { NOT = { monthly_income = 50 } }
+		}
+		modifier = {
+			factor = 1.25
+			owner = { monthly_income = 75 }
+		}		
+		modifier = {
+			factor = 1.25
+			owner = { monthly_income = 100 }
+		}		
+		modifier = {
+			factor = 0.25
+			is_overseas = yes
+		}	
+		modifier = {
+			factor = 0
+			is_capital = yes
+		}		
+	}
+}
+
+fine_arts_academy = {
+	cost = 1000
+	time = 12
+	modifier = {
+		stability_cost_modifier = -0.05
+	}
+	destroy_on_conquest = yes
+	one_per_country = yes
+	category = 8
+	monarch_power = ADM
+	
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 0
+			owner = { NOT = { monthly_income = 25 } }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { NOT = { monthly_income = 50 } }
+		}
+		modifier = {
+			factor = 1.25
+			owner = { monthly_income = 75 }
+		}		
+		modifier = {
+			factor = 1.25
+			owner = { monthly_income = 100 }
+		}			
+		modifier = {
+			factor = 0.25
+			is_overseas = yes
+		}	
+		modifier = {
+			factor = 0
+			is_capital = yes
+		}			
+	}	
+}
+
+university = {
+	cost = 1000
+	time = 12
+	modifier = {
+		technology_cost = -0.05
+	}	
+	destroy_on_conquest = yes
+	one_per_country = yes
+	category = 8
+	
+	monarch_power = ADM
+	
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 0
+			owner = { NOT = { monthly_income = 25 } }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { NOT = { monthly_income = 50 } }
+		}
+		modifier = {
+			factor = 1.25
+			owner = { monthly_income = 75 }
+		}		
+		modifier = {
+			factor = 1.25
+			owner = { monthly_income = 100 }
+		}		
+		modifier = {
+			factor = 0.25
+			is_overseas = yes
+		}	
+		modifier = {
+			factor = 0
+			is_capital = yes
+		}		
+	}
+}
+
+#Manufactories
+refinery = {
+	cost = 500
+	time = 60
+	manufactory = {
+		wine
+		sugar
+	}
+	modifier = {
+		trade_goods_size = 1.0
+	}
+	onmap = yes
+	category = 7
+	
+	monarch_power = DIP
+	
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 0
+			owner = { NOT = { monthly_income = 25 } }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { NOT = { monthly_income = 50 } }
+		}
+		modifier = {
+			factor = 1.25
+			owner = { monthly_income = 75 }
+		}		
+		modifier = {
+			factor = 1.25
+			owner = { monthly_income = 100 }
+		}			
+		modifier = {
+			factor = 2.0
+			is_capital = yes
+		}
+		modifier = {
+			factor = 0.25
+			is_overseas = yes
+		}			
+	}
+}
+
+wharf = {
+	cost = 500
+	time = 60
+	manufactory = {
+		naval_supplies
+		fish
+		salt
+	}
+	modifier = {
+		trade_goods_size = 1.0
+	}
+	onmap = yes
+	category = 7
+	
+	monarch_power = DIP
+	
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 0
+			owner = { NOT = { monthly_income = 25 } }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { NOT = { monthly_income = 50 } }
+		}
+		modifier = {
+			factor = 1.25
+			owner = { monthly_income = 75 }
+		}		
+		modifier = {
+			factor = 1.25
+			owner = { monthly_income = 100 }
+		}	
+		modifier = {
+			factor = 2.0
+			is_capital = yes
+		}
+		modifier = {
+			factor = 0.25
+			is_overseas = yes
+		}	
+	}
+}
+
+weapons = {
+	cost = 500
+	time = 60
+	manufactory = {
+		copper
+		iron
+	}
+	modifier = {
+		trade_goods_size = 1.0
+	}
+	onmap = yes	
+	category = 7
+	
+	monarch_power = MIL
+	
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 0
+			owner = { NOT = { monthly_income = 25 } }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { NOT = { monthly_income = 50 } }
+		}
+		modifier = {
+			factor = 1.25
+			owner = { monthly_income = 75 }
+		}		
+		modifier = {
+			factor = 1.25
+			owner = { monthly_income = 100 }
+		}	
+		modifier = {
+			factor = 2.0
+			is_capital = yes
+		}
+		modifier = {
+			factor = 0.25
+			is_overseas = yes
+		}	
+	}
+}
+
+textile = {
+	cost = 500
+	time = 60
+	manufactory = {
+		wool
+		cloth
+	}
+	modifier = {
+		trade_goods_size = 1.0
+	}
+	onmap = yes
+	category = 7
+	
+	monarch_power = ADM
+	
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 0
+			owner = { NOT = { monthly_income = 25 } }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { NOT = { monthly_income = 50 } }
+		}
+		modifier = {
+			factor = 1.25
+			owner = { monthly_income = 75 }
+		}		
+		modifier = {
+			factor = 1.25
+			owner = { monthly_income = 100 }
+		}	
+		modifier = {
+			factor = 2.0
+			is_capital = yes
+		}
+		modifier = {
+			factor = 0.25
+			is_overseas = yes
+		}	
+	}
+}
+
+farm_estate = {
+	cost = 500
+	time = 60
+	manufactory = {
+		grain
+	}
+	modifier = {
+		trade_goods_size = 1.0
+	}
+	onmap = yes
+	category = 7
+	
+	monarch_power = ADM
+	
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 0
+			owner = { NOT = { monthly_income = 25 } }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { NOT = { monthly_income = 50 } }
+		}
+		modifier = {
+			factor = 1.25
+			owner = { monthly_income = 75 }
+		}		
+		modifier = {
+			factor = 1.25
+			owner = { monthly_income = 100 }
+		}	
+		modifier = {
+			factor = 2.0
+			is_capital = yes
+		}
+		modifier = {
+			factor = 0.25
+			is_overseas = yes
+		}	
+	}
+}
+
+plantations = {
+	cost = 500
+	time = 60
+	manufactory = {
+		coffee
+		cotton
+		sugar
+		tobacco
+	}
+	modifier = {
+		trade_goods_size = 1.0
+	}
+	onmap = yes
+	category = 7
+	
+	monarch_power = ADM
+	
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 0
+			owner = { NOT = { monthly_income = 25 } }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { NOT = { monthly_income = 50 } }
+		}
+		modifier = {
+			factor = 1.25
+			owner = { monthly_income = 75 }
+		}		
+		modifier = {
+			factor = 1.25
+			owner = { monthly_income = 100 }
+		}	
+		modifier = {
+			factor = 2.0
+			is_capital = yes
+		}
+		modifier = {
+			factor = 0.25
+			is_overseas = yes
+		}	
+	}
+}
+tradecompany = {
+	cost = 500
+	time = 60
+	manufactory = {
+		ivory
+		tea
+		chinaware
+		slaves
+		spices
+		fur
+	}
+	modifier = {
+		trade_goods_size = 1.0
+	}
+	onmap = yes
+	category = 7
+	
+	monarch_power = DIP
+	
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 0
+			owner = { NOT = { monthly_income = 25 } }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { NOT = { monthly_income = 50 } }
+		}
+		modifier = {
+			factor = 1.25
+			owner = { monthly_income = 75 }
+		}		
+		modifier = {
+			factor = 1.25
+			owner = { monthly_income = 100 }
+		}	
+		modifier = {
+			factor = 2.0
+			is_capital = yes
+		}
+		modifier = {
+			factor = 0.25
+			is_overseas = yes
+		}	
+	}
+}
