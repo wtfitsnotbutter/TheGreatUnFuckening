@@ -132,9 +132,11 @@ religious_ideas = {
 	category = ADM
 
 	bonus = {
-		relations_decay_of_me = 1.00
+		global_missionary_strength = 0.03
 	}
-
+	devoutness = {
+		tolerance_own = 1
+	}
 	deus_vult = {
 		cb_on_religious_enemies = yes
 	}
@@ -142,19 +144,16 @@ religious_ideas = {
 		missionaries = 1
 	}
 	church_attendance_duty = {
-		stability_cost_modifier = -0.25
+		stability_cost_modifier = -0.13
 	}
-	divine_supremacy = { 
-		global_missionary_strength = 0.03
-	}
-	devoutness = {
-		tolerance_own = 1
+	deus_vult = {
+		cb_on_religious_enemies = yes
 	}
 	religious_tradition = {
 		prestige = 1
 	}
 	ecumenism = {
-		tolerance_heretic = 2
+		land_morale = 0.15
 	}
 	
 	ai_will_do = {
@@ -169,12 +168,15 @@ spy_ideas = {
 	bonus = {
 		rebel_support_efficiency = 0.50
 	}
-	
-	privateers = {
-		embargo_efficiency = 0.33
+	espionage  = {
+		may_infiltrate_administration = yes
+		may_sow_discontent = yes
+	}
+	claim_fab = {
+		fabricate_claims_time = -0.2
 	}
 	vetting = {
-		global_spy_defence = 0.25
+		global_spy_defence = 0.33
 	}
 	rumourmongering = {
 		may_sabotage_reputation = yes
@@ -184,14 +186,9 @@ spy_ideas = {
 		diplomats = 1
 	}
 	shady_recruitment = {
-		discovered_relations_impact = -0.33
+		discovered_relations_impact = -0.66
 	}
-	destabilising_efforts = {
-		may_sow_discontent = yes
-	}
-	espionage  = {
-		may_infiltrate_administration = yes
-	}
+
 	
 	ai_will_do = {
 		factor = 1
@@ -202,31 +199,30 @@ spy_ideas = {
 diplomatic_ideas = {
 	category = DIP
 	bonus = {
-		reduced_stab_impacts = yes
+		relations_decay_of_me = 1.00
 	}
 
 	foreign_embassies = {
 		diplomats = 1
 	}
-	claim_fabrication = {
-		fabricate_claims_time = -0.5
-	}	
 	cabinet = {
 		diplomatic_upkeep = 2
 	}
 	war_cabinet = {
 		war_exhaustion_cost = -0.33
 	}
-	revolution_and_counter = {
-		cb_on_government_enemies = yes
-	}
-	diplomatic_influence = {
-		diplomatic_reputation = 3
+	reduced_stab = {
+		reduced_stab_impacts = yes
 	}
 	flexible_negotiation = {
 		unjustified_demands = -0.25
 	}
-	
+	diplomatic_influence = {
+		diplomatic_reputation = 3
+	}	
+	revolution_and_counter = {
+		cb_on_government_enemies = yes
+	}
 	ai_will_do = {
 		factor = 1
 	}
@@ -342,30 +338,30 @@ economic_ideas = {
 	category = ADM
 
 	bonus = {
-		inflation_action_cost = -0.33
-	}	
-	
-	bureaucracy = {
-		global_tax_modifier = 0.10
+		inflation_action_cost = -0.50
 	}
+	
 	organised_construction = {
 		build_cost = -0.20
+	}
+	bureaucracy = {
+		global_tax_modifier = 0.10
 	}
 	national_bank = {
 		inflation_reduction = 0.1
 	}
-	debt_and_loans = {
-		interest = -1
+	adaptability = {
+		core_creation = -0.25
+	}	
+	smithian_economics = {
+		production_efficiency = 0.2
+ 	}
+	nationalistic_enthusiasm = {
+		land_maintenance_modifier = -0.10
 	}
 	centralization = {
 		advisor_pool = 1
 	}
-	nationalistic_enthusiasm = {
-		land_maintenance_modifier = -0.10
-	}
-	smithian_economics = {
-		production_efficiency = 0.2
- 	}
 	
 	ai_will_do = {
 		factor = 1
