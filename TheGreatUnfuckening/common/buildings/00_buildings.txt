@@ -27,8 +27,6 @@ temple = {
 	spare_on_core = yes
 	category = 1
 	
-	monarch_power = ADM
-	
 	ai_will_do = {
 		factor = 100
 		modifier = {
@@ -56,8 +54,6 @@ courthouse = {
 	}
 	destroy_on_conquest = yes
 	spare_on_core = yes
-	
-	monarch_power = ADM
 	
 	ai_will_do = {
 		factor = 100
@@ -91,8 +87,6 @@ spy_agency = {
 	destroy_on_conquest = yes
 	spare_on_core = yes
 	
-	monarch_power = ADM
-	
 	ai_will_do = {
 		factor = 100
 		modifier = {
@@ -120,8 +114,6 @@ town_hall = {
 	}
 	destroy_on_conquest = yes
 	spare_on_core = yes
-	
-	monarch_power = ADM
 	
 	ai_will_do = {
 		factor = 100
@@ -220,8 +212,6 @@ armory = {
 	category = 2
 	spare_on_core = yes
 	
-	monarch_power = MIL
-	
 	ai_will_do = {
 		factor = 100
 		modifier = {
@@ -250,9 +240,7 @@ training_fields = {
 	}
 	destroy_on_conquest = yes
 	spare_on_core = yes
-	
-	monarch_power = MIL
-	
+
 	ai_will_do = {
 		factor = 100
 		modifier = {
@@ -281,8 +269,6 @@ barracks = {
 	destroy_on_conquest = yes
 	spare_on_core = yes
 	
-	monarch_power = MIL
-	
 	ai_will_do = {
 		factor = 100
 		modifier = {
@@ -309,8 +295,6 @@ regimental_camp = {
 	}
 	destroy_on_conquest = yes
 	spare_on_core = yes
-	
-	monarch_power = MIL
 	
 	ai_will_do = {
 		factor = 100
@@ -412,8 +396,6 @@ dock = {
 	spare_on_core = yes
  	category = 3
 	
-	monarch_power = DIP
-	
 	ai_will_do = {
 		factor = 100	
 		modifier = {
@@ -451,8 +433,6 @@ drydock = {
 	destroy_on_conquest = yes
  	spare_on_core = yes
 	
-	monarch_power = DIP
-	
 	ai_will_do = {
 		factor = 100	
 		modifier = {
@@ -488,9 +468,7 @@ shipyard = {
 	}
 	destroy_on_conquest = yes
 	spare_on_core = yes
-	
-	monarch_power = DIP
-	
+
 	ai_will_do = {
 		factor = 100	
 		modifier = {
@@ -527,8 +505,6 @@ grand_shipyard = {
 	}
 	destroy_on_conquest = yes
 	spare_on_core = yes
-	
-	monarch_power = DIP
 	
 	ai_will_do = {
 		factor = 100
@@ -664,8 +640,6 @@ constable = {
 	spare_on_core = yes
 	category = 5
 	
-	monarch_power = ADM
-	
 	ai_will_do = {
 		factor = 100
 		modifier = {
@@ -712,8 +686,6 @@ workshop = {
 	}
 	destroy_on_conquest = yes
 	spare_on_core = yes
-	
-	monarch_power = ADM
 	
 	ai_will_do = {
 		factor = 100
@@ -762,8 +734,6 @@ counting_house = {
 	destroy_on_conquest = yes
 	spare_on_core = yes
 	
-	monarch_power = ADM
-	
 	ai_will_do = {
 		factor = 100
 		modifier = {
@@ -811,9 +781,7 @@ treasury_office = {
 	}
 	destroy_on_conquest = yes
 	spare_on_core = yes
-	
-	monarch_power = ADM
-	
+
 	ai_will_do = {
 		factor = 100
 		modifier = {
@@ -949,9 +917,7 @@ marketplace = {
 	destroy_on_conquest = yes
 	spare_on_core = yes
 	category = 6
-	
-	monarch_power = DIP
-	
+
 	ai_will_do = {
 		factor = 100
 		modifier = {
@@ -1032,8 +998,6 @@ trade_depot = {
 	destroy_on_conquest = yes
 	spare_on_core = yes
 	
-	monarch_power = DIP
-	
 	ai_will_do = {
 		factor = 100
 		modifier = {
@@ -1113,9 +1077,7 @@ canal = {
 	}
 	destroy_on_conquest = yes
 	spare_on_core = yes
-	
-	monarch_power = DIP
-	
+
 	ai_will_do = {
 		factor = 100
 		modifier = {
@@ -1195,9 +1157,7 @@ road_network = {
 	}
 	destroy_on_conquest = yes
 	spare_on_core = yes
-	
-	monarch_power = DIP
-	
+
 	ai_will_do = {
 		factor = 100
 		modifier = {
@@ -1431,9 +1391,7 @@ fort1 = {
 	}
 	destroy_on_conquest = no
 	category = 4
-	
-	monarch_power = MIL
-	
+
 	ai_will_do = {
 		factor = 100
 		modifier = {
@@ -1475,9 +1433,7 @@ fort2 = {
 		supply_limit = 0.5
 	}
 	destroy_on_conquest = no
-	
-	monarch_power = MIL
-	
+
 	ai_will_do = {
 		factor = 100
 		modifier = {
@@ -1519,9 +1475,7 @@ fort3 = {
 		supply_limit = 0.5
 	}
 	destroy_on_conquest = no
-	
-	monarch_power = MIL
-	
+
 	ai_will_do = {
 		factor = 100
 		modifier = {
@@ -1563,8 +1517,6 @@ fort4 = {
 		supply_limit = 0.5
 	}
 	destroy_on_conquest = no
-	
-	monarch_power = MIL
 	
 	ai_will_do = {
 		factor = 100
